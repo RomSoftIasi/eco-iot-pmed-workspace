@@ -26,6 +26,10 @@
                     "target": ".",
                     "collectLog": false,
                     "commit": "b50398b3f8269b81d57b599a7aaf3cfcc8918443"
+                },
+                {
+                    "type": "execute",
+                    "cmd": "cd opendsu-sdk && npm install"
                 }
 
             ]
