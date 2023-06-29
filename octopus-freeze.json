@@ -224,22 +224,6 @@
             ]
         },
         {
-            "name": "themes/blue-fluorite-theme",
-            "src": "https://github.com/opendsu/blue-fluorite-theme.git",
-            "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "bd830104fa3aafb54b948b7c2a19f6f303e08a1c"
-                },
-                {
-                    "type": "execute",
-                    "cmd": "cd themes/blue-fluorite-theme && npm install"
-                }
-            ]
-        },
-        {
             "name": "researcher-ssapp",
             "src": "",
             "actions": [
@@ -303,16 +287,6 @@
                 {
                     "type": "execute",
                     "cmd": "cd themes/trial-participant-theme && npm run build-dossier"
-                }
-            ]
-        },
-        {
-            "name": "blue-fluorite-theme-wallet-build",
-            "src": "",
-            "actions": [
-                {
-                    "type": "execute",
-                    "cmd": "cd themes/blue-fluorite-theme && npm run build-dossier"
                 }
             ]
         },
