@@ -138,6 +138,14 @@
                     "commit": "a53b6ae62001805119717b96e2f5a1ff60da0240"
                 },
                 {
+                    "type": "copy",
+                    "src": "./patch/sponsor-ssapp",
+                    "target": "./sponsor-ssapp",
+                    "options": {
+                        "overwrite": true
+                    }
+                },
+                {
                     "type": "execute",
                     "cmd": "cd sponsor-ssapp && npm install"
                 }
