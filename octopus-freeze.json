@@ -18,26 +18,6 @@
             ]
         },
         {
-            "name": "cardinal",
-            "src": "http://github.com/opendsu/cardinal.git",
-            "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "1fff8f862530b58efd9fc94462a112da795176a5"
-                },
-                {
-                    "type": "execute",
-                    "cmd": "cd cardinal && npm install"
-                },
-                {
-                    "type": "execute",
-                    "cmd": "cd cardinal && npm run build"
-                }
-            ]
-        },
-        {
             "name": "opendsu-sdk",
             "src": "https://github.com/opendsu/opendsu-sdk.git",
             "actions": [
@@ -46,11 +26,8 @@
                     "target": ".",
                     "collectLog": false,
                     "commit": "b50398b3f8269b81d57b599a7aaf3cfcc8918443"
-                },
-                {
-                    "type": "execute",
-                    "cmd": "cd opendsu-sdk && npm install"
                 }
+
             ]
         },
         {
@@ -70,22 +47,6 @@
                 {
                     "type": "execute",
                     "cmd": "cd common-services && npm run build"
-                }
-            ]
-        },
-        {
-            "name": "dossier-explorer-wallet-prototype",
-            "src": "https://github.com/opendsu/dossier-explorer-wallet-prototype.git",
-            "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "93bb76309913e780932bb367a0a599e54a04578d"
-                },
-                {
-                    "type": "execute",
-                    "cmd": "cd dossier-explorer-wallet-prototype && npm install"
                 }
             ]
         },
@@ -334,16 +295,6 @@
     ],
     "build": [
         {
-            "name": "cardinal-wallet-build",
-            "src": "",
-            "actions": [
-                {
-                    "type": "execute",
-                    "cmd": "cd cardinal && npm run build-dossier"
-                }
-            ]
-        },
-        {
             "name": "webcardinal-wallet-build",
             "actions": [
                 {
@@ -389,24 +340,6 @@
                 {
                     "type": "execute",
                     "cmd": "cd themes/blue-fluorite-theme && npm run build-dossier"
-                }
-            ]
-        },
-        {
-            "name": "dossier-explorer-wallet-prototype-build",
-            "src": "",
-            "actions": [
-                {
-                    "type": "execute",
-                    "cmd": "cd dossier-explorer-wallet-prototype && npm run build"
-                },
-                {
-                    "type": "copySeed",
-                    "src": "./dossier-explorer-wallet-prototype/seed",
-                    "target": "./apihub-root/dsu-explorer/wallet-patch/seed",
-                    "options": {
-                        "overwrite": true
-                    }
                 }
             ]
         },
