@@ -49,6 +49,6 @@
   },
   "homepage": "https://github.com/PharmaLedger-IMI/eco-iot-pmed-workspace#readme",
   "dependencies": {
-    "octopus": "git+http://github.com/opendsu/octopus.git#d72dfa6990b6804d2d07721eec2f022a4a31d7ed"
+    "octopus": "git+http://github.com/opendsu/octopus.git#a2bfd2485eccca66cb1160613eac9f6b30d66bda"
   }
 }
