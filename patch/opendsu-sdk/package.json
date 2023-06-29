@@ -4,7 +4,6 @@
   "description": "This repo is meant to be used for opendsu sdk development.",
   "scripts": {
     "dev-install": "node ./bin/scripts/mkDevEnv.js && npm install",
-    "postinstall": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run\"",
     "update": "git pull && npm install",
     "build": "node ./bin/scripts/pskbuild.js --projectMap=./builds/build.json",
     "start": "node ./psknode/bin/scripts/apiHubLauncher.js",
