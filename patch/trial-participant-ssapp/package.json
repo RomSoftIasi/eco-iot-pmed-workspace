@@ -1,0 +1,29 @@
+{
+  "name": "trial-participant-ssapp",
+  "version": "1.0.0",
+  "description": "Trial Participant Mobile App",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node ./node_modules/octopus/scripts/run",
+    "prebuild": "node ./node_modules/octopus/scripts/run prebuild devmode",
+    "build": "node ./node_modules/octopus/scripts/buildDSU.js",
+    "update": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PharmaLedger-IMI/trial-participant-ssapp.git"
+  },
+  "dependencies": {
+    "octopus": "git+http://github.com/opendsu/octopus.git#a2bfd2485eccca66cb1160613eac9f6b30d66bda"
+  },
+  "keywords": [
+    "ssapp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PharmaLedger-IMI/trial-participant-ssapp/issues"
+  },
+  "homepage": "https://github.com/PharmaLedger-IMI/trial-participant-ssapp#readme"
+}

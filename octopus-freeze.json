@@ -54,6 +54,14 @@
                     "commit": "652c5ddb1ccdbcfe6a8dd8d95fac8e05955a172c"
                 },
                 {
+                    "type": "copy",
+                    "src": "./patch/common-services",
+                    "target": "./common-services",
+                    "options": {
+                        "overwrite": true
+                    }
+                },
+                {
                     "type": "execute",
                     "cmd": "cd common-services && npm install"
                 },
@@ -74,6 +82,14 @@
                     "commit": "a1a0b8442dc76e6c1c748ed73d97cd355d2b7e87"
                 },
                 {
+                    "type": "copy",
+                    "src": "./patch/trust-loader",
+                    "target": "./apihub-root/sponsor-wallet/loader",
+                    "options": {
+                        "overwrite": true
+                    }
+                },
+                {
                     "type": "execute",
                     "cmd": "cd apihub-root/sponsor-wallet/loader && npm install"
                 }
@@ -88,6 +104,14 @@
                     "target": ".",
                     "collectLog": false,
                     "commit": "a1a0b8442dc76e6c1c748ed73d97cd355d2b7e87"
+                },
+                {
+                    "type": "copy",
+                    "src": "./patch/trust-loader",
+                    "target": "./apihub-root/trial-participant-wallet/loader",
+                    "options": {
+                        "overwrite": true
+                    }
                 },
                 {
                     "type": "execute",
@@ -106,6 +130,14 @@
                     "commit": "a1a0b8442dc76e6c1c748ed73d97cd355d2b7e87"
                 },
                 {
+                    "type": "copy",
+                    "src": "./patch/trust-loader",
+                    "target": "./apihub-root/clinical-site-wallet/loader",
+                    "options": {
+                        "overwrite": true
+                    }
+                },
+                {
                     "type": "execute",
                     "cmd": "cd apihub-root/clinical-site-wallet/loader && npm install"
                 }
@@ -120,6 +152,14 @@
                     "target": ".",
                     "collectLog": false,
                     "commit": "a1a0b8442dc76e6c1c748ed73d97cd355d2b7e87"
+                },
+                {
+                    "type": "copy",
+                    "src": "./patch/trust-loader",
+                    "target": "./apihub-root/researcher-wallet/loader",
+                    "options": {
+                        "overwrite": true
+                    }
                 },
                 {
                     "type": "execute",
@@ -162,6 +202,14 @@
                     "commit": "3634aa900155932be30ea14bbdd3ab8c4336395e"
                 },
                 {
+                    "type": "copy",
+                    "src": "./patch/clinical-site-ssapp",
+                    "target": "./clinical-site-ssapp",
+                    "options": {
+                        "overwrite": true
+                    }
+                },
+                {
                     "type": "execute",
                     "cmd": "cd clinical-site-ssapp && npm install"
                 }
@@ -176,6 +224,14 @@
                     "target": ".",
                     "collectLog": false,
                     "commit": "93b3c0e4486232d1b92f93044cc14ff1b9249d38"
+                },
+                {
+                    "type": "copy",
+                    "src": "./patch/trial-participant-ssapp",
+                    "target": "./trial-participant-ssapp",
+                    "options": {
+                        "overwrite": true
+                    }
                 },
                 {
                     "type": "execute",
@@ -194,6 +250,14 @@
                     "commit": "f002e931c3dcf29cbe4302f28ac74dbc4a1684b4"
                 },
                 {
+                    "type": "copy",
+                    "src": "./patch/themes/sponsor-theme",
+                    "target": "./themes/sponsor-theme",
+                    "options": {
+                        "overwrite": true
+                    }
+                },
+                {
                     "type": "execute",
                     "cmd": "cd themes/sponsor-theme && npm install"
                 }
@@ -208,6 +272,14 @@
                     "target": ".",
                     "collectLog": false,
                     "commit": "5c81b029269abac10f035aba8a4c764f9de33e44"
+                },
+                {
+                    "type": "copy",
+                    "src": "./patch/themes/clinical-site-theme",
+                    "target": "./themes/clinical-site-theme",
+                    "options": {
+                        "overwrite": true
+                    }
                 },
                 {
                     "type": "execute",
@@ -226,6 +298,14 @@
                     "commit": "b4de023ab3942804e64fec499fecac742c32f934"
                 },
                 {
+                    "type": "copy",
+                    "src": "./patch/themes/trial-participant-theme",
+                    "target": "./themes/trial-participant-theme",
+                    "options": {
+                        "overwrite": true
+                    }
+                },
+                {
                     "type": "execute",
                     "cmd": "cd themes/trial-participant-theme && npm install"
                 }
@@ -236,24 +316,16 @@
             "src": "",
             "actions": [
                 {
-                    "type": "execute",
-                    "cmd": "cd researcher-ssapp && npm install"
-                }
-            ]
-        },
-        {
-            "name": "metrics-middleware",
-            "src": "http://github.com/PharmaLedger-IMI/metrics-middleware.git",
-            "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "4dcb2ec281f837c27cfcb612db07630d00177b9d"
+                    "type": "copy",
+                    "src": "./patch/researcher-ssapp",
+                    "target": "./researcher-ssapp",
+                    "options": {
+                        "overwrite": true
+                    }
                 },
                 {
                     "type": "execute",
-                    "cmd": "cd metrics-middleware/middleware && npm install"
+                    "cmd": "cd researcher-ssapp && npm install"
                 }
             ]
         }
