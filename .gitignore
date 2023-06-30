@@ -2,7 +2,7 @@
 .prettierignore
 .idea
 .vscode
-webcardinal
+/webcardinal
 cardinal
 /opendsu-sdk
 dossier-explorer-wallet-prototype

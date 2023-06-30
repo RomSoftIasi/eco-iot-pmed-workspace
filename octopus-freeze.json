@@ -12,6 +12,14 @@
                     "commit": "d2630d3dd52c9e5a5c922002bd9acaf25b375c65"
                 },
                 {
+                    "type": "copy",
+                    "src": "./patch/webcardinal",
+                    "target": "./webcardinal",
+                    "options": {
+                        "overwrite": true
+                    }
+                },
+                {
                     "type": "execute",
                     "cmd": "cd webcardinal && npm install"
                 }
