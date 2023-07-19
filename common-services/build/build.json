@@ -1,0 +1,6 @@
+{
+  "commonServices": {
+    "deps": "common-services",
+    "autoLoad": true
+  }
+}
