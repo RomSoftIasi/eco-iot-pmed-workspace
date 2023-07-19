@@ -1,0 +1,98 @@
+<link href="./assets/css/pages/trial.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<webc-container controller="econsent/TrialController">
+    <div data-if="@econsentsAreLoaded" class="container-child">
+        <div slot="false">
+            <webc-spinner></webc-spinner>
+        </div>
+        <div slot="true">
+            <div class="header-title">
+                <button class="navigate-back" data-tag="navigation:go-back">
+                    <i class="fa fa-angle-left"></i>
+                </button>
+                <h3>Consents List</h3>
+            </div>
+
+            <div class="trial-card">
+                <div class="trial-status-item">
+                    <span>Trial:</span>
+                    <p>{{@trial.name}}</p>
+                </div>
+                <div class="trial-status-item">
+                    <span>Status:</span>
+                    <p>{{@trial.status}}</p>
+                </div>
+                <div class="trial-status-item">
+                    <span>Clinic Name:</span>
+                    <p>{{@site.siteName}} ({{@site.country}})</p>
+                </div>
+                <div class="trial-status-item">
+                    <span>Clinic ID:</span>
+                    <p>{{@site.number}}</p>
+                </div>
+                <div class="trial-status-item">
+                    <span>Patient Status:</span>
+                    <p>{{@trialParticipant.tp.status}}</p>
+                </div>
+                <div class="trial-status-item">
+                    <span>Patient Number:</span>
+                    <p>{{@trialParticipant.tp.number}}</p>
+                </div>
+            </div>
+
+            <div class="trial-details">
+                <strong>Details</strong>
+                <p>General details and description of the trial in case it is provided by the Sponsor/Site regarding
+                    specific particularities of the Trial or general message for Trial Subject</p>
+            </div>
+
+            <div>
+                <p class="consent-table-title">Consent List</p>
+                <div data-if="@hasConsents">
+                    <div data-for="@econsents" slot="true" class="consents-container">
+                        <div class="consent-item-container">
+
+                            <div class="consent-item"
+                                 data="@keySSI" data-tag="go-to-econsent">
+
+                                <div class="layout-content consent-details">
+                                    <div>
+                                        <i class="fa fa-file-text-o"></i>
+                                        <strong>
+                                            {{@name}}
+                                        </strong>
+                                    </div>
+
+                                    <div>
+                                        {{@version}} - {{@versionDateAsString}}
+                                    </div>
+                                    <div data-status-type="@econsentType">
+                                        ({{@type}})
+                                    </div>
+                                </div>
+
+                                <div class="layout-content consent-status-container" data-status-type="@status.statusType">
+                                    {{@status.name}}
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div slot="false">
+                        <div class="alert alert-warning" role="alert">
+                            <i>No consents are yet available.</i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="past-trials-container">
+                <p class="past-trials" data-tag="navigate:past-trials">
+                    Past Trials
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+</webc-container>

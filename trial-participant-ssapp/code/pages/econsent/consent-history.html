@@ -1,0 +1,35 @@
+<webc-container controller="econsent/ConsentHistoryController">
+    <div class="container-child">
+        <header>
+            <div class="header-title">
+
+                <button class="navigate-back" data-tag="navigation:go-back">
+                    <i class="fa fa-angle-left"></i>
+                </button>
+
+                <h3>Consent History</h3>
+            </div>
+        </header>
+
+        <div class="consent-state">
+            <h1>{{@consentName}}</h1>
+            <h3>{{@consentDate}}</h3>
+            <h1 class="consent-status" status-type="@statusType">{{@status}}</h1>
+        </div>
+
+        <div>
+            <ion-list data-for="@versions">
+
+                <ion-item class="mt-2">
+                    <ion-avatar slot="start" class="icon-container">
+                        <i class="fa fa-file-text-o consent-icon"></i>
+                    </ion-avatar>
+                    <p class="version-name">{{@consentName}} v{{@version}}</p>
+                    <button slot="end" class="button-link-option" data-tag="navigation:preview">Preview</button>
+                </ion-item>
+
+            </ion-list>
+        </div>
+
+    </div>
+</webc-container>

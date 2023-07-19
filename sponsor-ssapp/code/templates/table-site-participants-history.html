@@ -1,0 +1,23 @@
+<webc-container class="common-datatable dt-7-col" controller="template-controllers/TableTemplateController" data-view-model="@">
+    <webc-datatable datasource="@dataSource">
+        <div slot="header">Consent Name</div>
+        <div slot="header">Type</div>
+        <div slot="header">Version</div>
+        <div slot="header">TS Signed</div>
+        <div slot="header">TS Withdrew</div>
+        <div slot="header">HCP Signature</div>
+        <div slot="header">Options</div>
+
+        <div class="cell">{{@name}}</div>
+        <div class="cell">{{@type}}</div>
+        <div class="cell">{{@version}}</div>
+        <div class="cell">{{@participantSigned}}</div>
+        <div class="cell">{{@participantWithDrew}}</div>
+        <div class="cell">{{@hcoSigned}}</div>
+        <div class="cell">
+            <button class="btn btn-bare btn-link" data-tag="view-participant-consent-preview">Preview</button>
+        </div>
+
+        <div slot="no-data">There are no items to display</div>
+    </webc-datatable>
+</webc-container>

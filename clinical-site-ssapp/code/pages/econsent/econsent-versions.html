@@ -1,0 +1,49 @@
+<webc-container controller="econsent/EconsentVersionsController">
+    <div class="container main-container">
+        <div class="container flex-container">
+            <breadcrumb-navigator></breadcrumb-navigator>
+            <h5 class="generic-title">Versions History</h5>
+        </div>
+
+        <main>
+
+            <div data-if="@dataSourceInitialized">
+
+                <webc-spinner slot="loading"></webc-spinner>
+
+                <div class="common-datatable econsents dt-7-col" slot="true">
+
+                    <webc-datatable datasource="@dataSourceVersions">
+                        <div slot="no-data" class="alert alert-warning" role="alert">
+                            <h4 class="alert-heading">No actions yet!</h4>
+                        </div>
+
+                        <div slot="header">Version</div>
+                        <div slot="header">Version Date</div>
+                        <div slot="header">Action Needed</div>
+                        <div slot="header">Name</div>
+                        <div slot="header">Status</div>
+                        <div slot="header">Date</div>
+                        <div slot="header">Actions</div>
+
+                        <div class="cell">{{@version}}</div>
+                        <div class="cell">{{@versionDate}}</div>
+                        <div class="cell">{{@actionNeeded}}</div>
+                        <div class="cell">{{@name}}</div>
+                        <div class="cell">{{@status}}</div>
+                        <div class="cell">{{@toShowDate}}</div>
+                        <div class="cell">
+                            <button class="link-button" data-tag="preview-consent">Preview</button>
+                        </div>
+
+                    </webc-datatable>
+                </div>
+            </div>
+
+
+        </main>
+
+    </div>
+</webc-container>
+
+

@@ -1,0 +1,50 @@
+
+<webc-container controller="econsent/TrialParticipantHealthDataController">
+    <div class="container main-container">
+        <div class="container flex-container">
+            <breadcrumb-navigator></breadcrumb-navigator>
+            <h5 class="generic-title">Health Data</h5>
+            <div class="d-flex">
+                <div class="mb-2">
+                    <span class="badge badge-success">
+                        Device ID
+                        <span class="badge badge-light assigned-tp-device">{{@deviceId}}</span>
+                    </span>
+                </div>
+                <div class="ml-2">
+                    <span class="badge badge-info">
+                        TP Number
+                        <span class="badge badge-light tp-number-badge">{{@trialParticipantNumber}}</span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div data-if="@hasHealthData" class="flex-container" >
+            <webc-spinner slot="loading"></webc-spinner> 
+            <div slot="false" class="alert alert-warning text-center" role="alert">
+                <h4 class="alert-heading">There are no patient observations yet!</h4>
+                <p>Assign one device for this patient.</p>
+            </div>
+            <div class="common-datatable health-data-table dt-4-col" slot="true" >
+                <webc-datatable datasource="@PatientHealthDataSource">
+                    <div slot="header">Date</div>
+                    <div slot="header">Time</div>
+                    <div slot="header">Data Type</div>
+                    <div slot="header">Value</div>
+            
+                    <div class="cell">
+                        <span class="badge badge-primary"> {{@date}} </span>
+                    </div>
+                    <div class="cell">
+                        <span class="badge badge-success"> {{@time}}</span>
+                        </div>
+                    <div class="cell">{{@title}}</div>
+                    <div class="cell">{{@value}} {{@unit}}</div>
+                </webc-datatable>
+            </div>
+        </div>
+
+    </div>
+</webc-container>

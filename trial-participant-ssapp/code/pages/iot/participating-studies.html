@@ -1,0 +1,49 @@
+<webc-container controller="iot/ParticipatingStudiesController">
+
+    <div class="container-child">
+
+        <header>
+            <div class="header-title">
+                <button class="navigate-back" data-tag="navigation:go-back">
+                    <i class="fa fa-angle-left"></i>
+                </button>
+                <h3>Participating Studies</h3>
+            </div>
+        </header>
+
+        <div>
+            <div data-if="@has_participating_studies">
+
+                <div slot="false" class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">You do not have any participating studies yet. Please review your pending invitations or check the completed studies. </h4>
+                </div>
+
+                <div slot="true" data-for="@participatingFullStudies">
+                    <ion-card class="card">
+                        <ion-card-content>
+                            <div class="card-item">
+                                <p class="study-title">
+                                    {{@title}}
+                                </p>
+                            </div>
+                            <div class="card-item title-container">
+                                <span>Data donating: </span>
+                                <div data-for="@data">
+                                    <span class="badge badge-primary study-datatype">{{@}}</span>
+                                </div>
+
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <ion-button color="green" data-tag="view-study-details">View
+                                </ion-button>
+                                <ion-button color="green" data-tag="view-study-feedback">Feedback
+                                </ion-button>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</webc-container>

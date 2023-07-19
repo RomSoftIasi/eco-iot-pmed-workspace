@@ -1,0 +1,42 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+textarea {
+    width: 700px;
+    height: 100px;
+}
+
+.summary-tables {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.procedure-details-item {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    width: 70%;
+}
+
+.procedure-details-item.form-control {
+    border-radius: 0.15rem;
+}
+
+.required:after {
+    content: " *";
+    color: red;
+    font-weight: 100;
+}
+
+.input-group[is-invalid] input{
+    border-color:red;
+}
+
+.input-group[is-invalid] .input-group-append button{
+    border-top-color: red;
+    border-right-color:red;
+    border-bottom-color:red;
+}

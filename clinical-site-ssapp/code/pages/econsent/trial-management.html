@@ -1,0 +1,60 @@
+<webc-container controller="econsent/TrialManagementController">
+    <div class="container main-container common-2-rows-grid">
+        <div class="container flex-container">
+            <breadcrumb-navigator></breadcrumb-navigator>
+            <h5 class="generic-title">Trial Management</h5>
+            <webc-template template="alert" data-view-model="@" class="w-100"></webc-template>
+        </div>
+        <main>
+            <div data-if="@hasTrials">
+
+                <webc-spinner slot="loading"></webc-spinner>
+                <div slot="false" class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">No trials yet!</h4>
+                    <p>Please provide your DID to your sponsor in order to be included in a trial!
+                    </p>
+                </div>
+                <div class="common-datatable trial-management dt-8-col" slot="true">
+
+                    <webc-datatable datasource="@trialsDataSource">
+
+                        <div slot="header">Sponsor</div>
+                        <div slot="header">Trial Number/Id</div>
+                        <div slot="header">Trial Name</div>
+                        <div slot="header">Site Number/Id</div>
+                        <div slot="header">Status</div>
+                        <div slot="header">Stage</div>
+                        <div slot="header">Data Analysis</div>
+                        <div slot="header">Options</div>
+
+
+                        <div class="cell">{{ @sponsor }}</div>
+                        <div class="cell">{{ @id}}</div>
+                        <div class="cell">{{ @name }}</div>
+                        <div class="cell">{{ @siteId }}</div>
+                        <div class="cell">{{ @siteStatus }}</div>
+                        <div class="cell">{{ @siteStage }}</div>
+                        <div class="cell" data-if="@showViewButton">
+                            <div slot="true">
+                                <button class="link-button" data-tag="view-data-analysis">View</button>
+                            </div>
+
+                            <div slot="false">
+                                <span>N/A</span>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <button class="link-button" data-tag="trials:consents">Consents</button>
+                            <label> | </label>
+                            <button class="link-button" data-tag="trials:participants">Subjects</button>
+                            <label> | </label>
+                            <button class="link-button" data-tag="trials:questionnaire">Questionnaire</button>
+                        </div>
+
+                    </webc-datatable>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</webc-container>

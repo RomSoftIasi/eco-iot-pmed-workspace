@@ -1,0 +1,18 @@
+#visits-container .visits-header {
+    border-top: 1px solid #008798;
+    border-bottom: 1px solid #008798;
+    padding: 10px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: white;
+}
+
+#visits-container .visits-procedures:nth-child(2n) {
+    background: #c2ced8;
+}
+
+#visits-container .visits-procedures:nth-child(2n+1) {
+    background: #cfe8eb;
+}

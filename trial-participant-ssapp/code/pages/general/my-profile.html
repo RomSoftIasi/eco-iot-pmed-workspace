@@ -1,0 +1,87 @@
+<link href="./assets/css/pages/profile.css" rel="stylesheet">
+<webc-container controller="general/MyProfileController">
+    <div class="container-child full-height">
+        <div class="header-title">
+            <button class="navigate-back" data-tag="back">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <h3>My Profile</h3>
+        </div>
+        <div>
+            <div class="form-group">
+                <div class="avatar-upload">
+                    <div class="avatar-edit">
+                        <input type='file' id="profileImageUpload" accept=".png, .jpg, .jpeg"/>
+                        <label for="profileImageUpload"></label>
+                    </div>
+                    <div class="avatar-preview">
+                        <img 
+                            class="rounded-circle profile-user-img" 
+                            id="imagePreview" 
+                            src="@profilePicture"
+                            alt="User profile picture"
+                        >
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group mb-2">
+                <label>Patient Name:</label>
+                <input type="email" class="form-control shadow-none" value="@tp.subjectName" readonly disabled>
+            </div>
+
+            <div class="form-group mb-2">
+                <label>Patient DID:</label>
+                <input type="email" class="form-control shadow-none" value="@publicDid" readonly disabled>
+            </div>
+
+            <div class="form-group mb-2">
+                <label>Anonymized DID:</label>
+                <input type="email" class="form-control shadow-none" value="@tp.did" readonly disabled>
+            </div>
+
+            <div class="form-group mb-2">
+                <label>Email address:</label>
+                <input type="email" class="form-control shadow-none" id="email-input" placeholder="Enter email" value="@contactData.emailAddress">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="form-group mb-2">
+                <label>Phone number:</label>
+                <input type="tel" class="form-control shadow-none" id="phone-input" placeholder="Phone number" value="@contactData.phoneNumber">
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="input-address">Address:</label>
+                    <div class="input-group mb-3">
+                        <input
+                            id="input-address" 
+                            type="text" 
+                            class="form-control shadow-none" 
+                            placeholder="Your address" 
+                            aria-label="Your address"
+                            value="@contactData.addressText"
+                            readonly
+                            disabled
+                        />
+                        <div class="input-group-append">
+                            <button id="edit-address-button" class="btn btn-outline-secondary" type="button" data-tag="edit-address">
+                                <span class="fa fa-pencil"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+
+        <div class="button-group-wrapper text-center p-1">
+            <div class="d-flex justify-content-between">
+                <button class="general-button" data-tag="profile:save" disabled="@isBtnDisabled">Save</button>
+            </div>
+        </div>
+
+    </div>
+</webc-container>

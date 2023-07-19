@@ -1,0 +1,165 @@
+
+#calendar *:not(.fa) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+#calendar .title{
+    color: #00345b;
+    font-weight: bold;
+    font-size: 18px;
+    float: right;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.calendar-initializing .spinner-border{
+    margin-bottom: 2rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.calendar {
+    position: relative;
+}
+
+.calendar-initializing {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255,255,255,0.5);
+    z-index: 1000000;
+}
+
+#calendar .calendar-container {
+    width: 20rem;
+    height: 100vh;
+    background-color: #E5E5E5;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calendar .calendar {
+    /*width: 45rem;
+     height: 52rem;
+     */
+    width: 100%;
+    height: 100%;
+    background-color: #E5E5E5;
+    border-radius: 20px;
+}
+
+#calendar .month {
+    width: 100%;
+    height: 4rem;
+    background-color: #00345B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    color: #E5E5E5;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#calendar .month span {
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+#calendar .month h1 {
+    font-size: min(8vw, 2rem);
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+#calendar .month p {
+    font-size: min(4vw, 1rem);
+}
+
+#calendar .weekdays {
+    width: 100%;
+    height: 2rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: end;
+}
+
+#calendar .weekdays div {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calendar .days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+
+}
+
+#calendar .days div {
+    font-size: 1.1rem;
+    margin: 0.3rem;
+    width: calc((100% - 4.2rem)/7);
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+#calendar .days div:hover:not([data-day-type="today"]) {
+    /*    background-color: #262626; */
+    border: 0.2rem solid #777;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#calendar div[data-day-type="prev"],
+#calendar div[data-day-type="next"] {
+    opacity: 0.5;
+    border: none;
+    cursor: none;
+    border-radius: 0;
+}
+
+#calendar div[data-day-type="today"] {
+    border-radius: 10px;
+    background-color: #d7b360;
+}
+
+#calendar div[day-type="visit"]::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f005";
+    color: #DA22BC;
+}
+
+#calendar div[day-type="visit"][prom-type][prem-type]::after,
+#calendar div[day-type="visit"][prom-type]::after,
+#calendar div[day-type="visit"][prem-type]::after{
+    color: #1aa999;
+}
+
+#calendar div[prom-type]::after,
+#calendar div[prem-type]::after,
+#calendar div[prom-type][prem-type]::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f005";
+    color: #e8ac0f;
+}

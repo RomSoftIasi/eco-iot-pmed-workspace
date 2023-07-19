@@ -1,0 +1,19 @@
+<webc-container class="common-datatable dt-5-col" controller="template-controllers/TableTemplateController" data-view-model="@">
+    <webc-datatable datasource="@dataSource">
+        <div slot="header">Site Cons. Name</div>
+        <div slot="header">Corresponding Main Cons.</div>
+        <div slot="header">Date</div>
+        <div slot="header">Type</div>
+        <div slot="header">Options</div>
+
+        <div class="cell">{{@siteConsentNameVer}}</div>
+        <div class="cell">{{@trialConsentNameVer}}</div>
+        <div class="cell">{{@versionDate}}</div>
+        <div class="cell">{{@type}}</div>
+        <div class="cell">
+            <button class="btn btn-bare btn-link" data-tag="view-attachment">Preview</button>
+        </div>
+
+        <div slot="no-data">There are no items to display</div>
+    </webc-datatable>
+</webc-container>

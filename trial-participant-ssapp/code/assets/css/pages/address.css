@@ -1,0 +1,15 @@
+.container-child.full-height {
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    display: grid;
+}
+
+#country-input:focus,
+#county-input:focus,
+#city-input:focus,
+#street-input:focus,
+#street-nr-input:focus,
+#extra-input:focus,
+#postal-input:focus {
+    border-color: rgb(13, 52, 92);
+}

@@ -1,0 +1,16 @@
+<h2 slot="header">Edit Contact</h2>
+
+  <div class="modal-form-container">
+    <div class="form-group">
+      <label class="col-form-label">{{ @site.did.label }}</label>
+      <input class="form-control" data-view-model="@site.did" />
+    </div>
+
+    <div class="form-group">
+      <label class="col-form-label">{{ @site.name.label }}</label>
+      <input class="form-control" data-view-model="@site.name" />
+    </div>
+  </div>
+
+  <button class="btn btn-primary mt-2" slot="footer" data-tag="update-contact">Submit</button>
+

@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="./assets/css/pages/address.css"/>
+<webc-container controller="general/EditAddressController">
+    <div class="container-child full-height">
+        <div class="header-title">
+            <button class="navigate-back" data-tag="back">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <h3>Edit Address</h3>
+        </div>
+
+        <div>
+            <div class="form-group mb-2">
+                <label>Country:</label>
+                <input type="text" class="form-control shadow-none" id="country-input" placeholder="Your country" value="@contactData.address.country">
+            </div>
+
+            <div class="form-group mb-2">
+                <label>County:</label>
+                <input type="text" class="form-control shadow-none" id="county-input" placeholder="Your county" value="@contactData.address.county">
+            </div>
+
+            <div class="form-group mb-2">
+                <label>City:</label>
+                <input type="text" class="form-control shadow-none" id="city-input" placeholder="Your city" value="@contactData.address.city">
+            </div>
+
+            <div class="form-group mb-2">
+                <label>Street:</label>
+                <input type="text" class="form-control shadow-none" id="street-input" placeholder="Your street" value="@contactData.address.street">
+            </div>
+
+            <div class="form-group mb-2">
+                <label>Street Number:</label>
+                <input type="text" class="form-control shadow-none" id="street-nr-input" placeholder="Your street number" value="@contactData.address.number">
+            </div>
+
+            <div class="form-group mb-2">
+                <label>Extra Details:</label>
+                <input type="text" class="form-control shadow-none" id="extra-input" placeholder="Extra details about your address" value="@contactData.address.extraInfo">
+            </div>
+
+            <div class="form-group">
+                <label>Postal Code:</label>
+                <input type="text" class="form-control shadow-none" id="postal-input" placeholder="Your postal code" value="@contactData.address.postalCode">
+            </div>
+        </div>
+
+        <div class="button-group-wrapper text-center p-1">
+            <div class="d-flex justify-content-between">
+                <button class="general-button" data-tag="address:save" disabled="@isBtnDisabled">Save</button>
+            </div>
+        </div>
+    </div>
+</webc-container>

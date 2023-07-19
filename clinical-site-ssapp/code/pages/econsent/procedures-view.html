@@ -1,0 +1,44 @@
+<webc-container controller="econsent/ProceduresViewController">
+
+    <div class="container main-container stepper-3-rows-grid">
+        <div class="container flex-container">
+            <breadcrumb-navigator></breadcrumb-navigator>
+            <h5 class="generic-title">Visit: {{@visit.name}}</h5>
+
+            <div class="form-check complete-procedures">
+                <input type="checkbox" class="form-check-input" checked="@makeAllCompleted" value="@makeAllCompleted" id="makeAllCompleted">
+                <label class="form-check-label" for="makeAllCompleted">Mark all completed</label>
+            </div>
+        </div>
+
+        <div class="container">
+            <header>
+                <div class="row-wrapper grid-procedures-view">
+                    <label>Procedures</label>
+                    <label>Actions</label>
+                    <label>Status</label>
+                </div>
+            </header>
+            <main data-for="@procedures">
+                <div class="row-wrapper grid-procedures-view">
+                    <div class="procedure-details-item">
+                        <label>{{@name}}</label>
+                    </div>
+                    <div class="form-group procedure-details-item">
+                        <select class="form-control" data-for="@statusList.options" value="@statusList.value" id="statusList">
+                            <option value="@value">{{@label}}</option>
+                        </select>
+                    </div>
+                    <div data-if="@status" class="procedure-details-item">
+                        <label slot="true">{{@status}}</label>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div class="button-group-wrapper">
+            <button data-tag="confirm-procedures">Update</button>
+        </div>
+
+    </div>
+</webc-container>

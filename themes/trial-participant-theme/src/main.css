@@ -1,0 +1,90 @@
+@import url("fonts/fontawesome/font-awesome.min.css");
+@import url("bootstrap/css/bootstrap.min.css");
+@import url("sections/landing.css");
+@import url("sections/notifications.css");
+@import url("sections/header.css");
+@import url("sections/button.css");
+@import url("sections/questionnaire.css");
+@import url("sections/calendar.css");
+@import url("sections/datatable.css");
+@import url("sections/feedback.css");
+@import url("sections/studies.css");
+@import url("sections/consents-history.css");
+@import url("sections/consent-preview.css");
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+:root {
+    --webc-app-menu-mode: none;
+    --ion-color-green: #008798;
+    --ion-color-green-rgb: 0,135,152;
+    --ion-color-green-contrast: #ffffff;
+    --ion-color-green-contrast-rgb: 255,255,255;
+    --ion-color-green-shade: #007786;
+    --ion-color-green-tint: #1a93a2;
+
+
+    --ion-color-dark-blue: #00345b;
+
+    --padding-start: 0px;
+}
+
+.ion-color-green {
+    --ion-color-base: var(--ion-color-green);
+    --ion-color-base-rgb: var(--ion-color-green-rgb);
+    --ion-color-contrast: var(--ion-color-green-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-green-contrast-rgb);
+    --ion-color-shade: var(--ion-color-green-shade);
+    --ion-color-tint: var(--ion-color-green-tint);
+}
+
+.ion-color-blue {
+    --ion-color-base: var(--ion-color-dark-blue);
+    --ion-color-base-rgb: var(--ion-color-dark-blue);
+    --ion-color-contrast: var(--ion-color-dark-blue);
+    --ion-color-contrast-rgb: var(--ion-color-dark-blue);
+    --ion-color-shade: var(--ion-color-dark-blue);
+    --ion-color-tint: var(--ion-color-dark-blue);
+}
+
+ion-badge{
+    padding: 5px;
+    font-size: 0.75rem;
+}
+
+webc-spinner{
+    background: rgba(64, 149, 131, 0.15);
+}
+
+webc-spinner[data-value]::after {
+    content: attr(data-value);
+    top: calc(50% + 30px);
+    padding: 15px 15px 15px 70px;
+    background: #008798;
+    color: white;
+    border-radius: 5px;
+    margin-left: -60px;
+}
+
+webc-spinner[data-value][completed]::after {
+    margin-left: -65px;
+    padding-left: 40px;
+}
+
+webc-spinner[data-value][completed] *{
+    visibility: hidden;
+}
+
+webc-spinner[data-value][completed]::before{
+    content: "\f058";
+    font-family: FontAwesome;
+    font-size:1.5em;
+    z-index: 100;
+    color: white;
+}

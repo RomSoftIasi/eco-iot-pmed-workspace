@@ -1,0 +1,24 @@
+button.navigate-back {
+    width: 2rem;
+    height: 2rem;
+    color: #FFF;
+    border-radius: 0.5rem;
+    background: #00345b;
+    box-shadow: none;
+    border: none;
+    font-size: 1rem;
+}
+
+.header-title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.header-title h3{
+    margin:0 0 0 1rem;
+}
+
+.container > header > .header-title{
+    padding: 5%;
+}

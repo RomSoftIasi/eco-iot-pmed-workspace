@@ -1,0 +1,20 @@
+.table-filter-wrapper {
+    display: grid;
+    width: 100%;
+    column-gap: 1rem;
+    align-items: flex-end;
+    padding: 1rem 0;
+}
+
+.table-filter-wrapper.actions-no-4 {
+    grid-template-columns: 5fr 3fr auto auto;
+}
+
+.table-filter-wrapper.actions-no-5 {
+    grid-template-columns: 5fr 2fr 2fr auto auto;
+}
+
+.table-filter-wrapper .option-button {
+    display: flex;
+    justify-content: flex-end;
+}

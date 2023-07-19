@@ -1,0 +1,34 @@
+@import url('fonts/fontawesome/font-awesome.min.css');
+@import url('fonts/nunito/nunito.css');
+@import url('bootstrap/css/bootstrap.min.css');
+
+@import url("sections/general.css");
+
+@import url("sections/container.css");
+@import url("sections/footer.css");
+@import url("sections/form.css");
+@import url("sections/header.css");
+@import url("sections/main.css");
+@import url("sections/visits.css");
+
+@import url("components/breadcrumb.css");
+@import url("components/button.css");
+@import url("components/canvas.css");
+@import url("components/chart.css");
+@import url("components/datatable.css");
+@import url("components/filter-search.css");
+@import url("components/icon.css");
+@import url("components/image.css");
+@import url("components/label.css");
+@import url("components/modal.css");
+@import url("components/table.css");
+
+:root {
+    --primary: #00345b;
+    --secondary: #008798;
+    --webc-secondary-background: #008798 !important;
+}
+
+webc-modal {
+    --max-width: 40% !important;
+}

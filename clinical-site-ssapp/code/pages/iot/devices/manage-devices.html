@@ -1,0 +1,84 @@
+<webc-container controller="iot/devices/ManageDevicesController">
+    <div class="container main-container manage-devices">
+        <div class="container flex-container">
+            <breadcrumb-navigator></breadcrumb-navigator>
+            <h5 class="generic-title">IOT Devices List</h5>
+            <webc-template template="alert" data-view-model="@" class="w-100"></webc-template>
+        </div>
+
+        <div class="container" data-if="@deviceListNotEmpty">
+
+            <webc-spinner slot="loading"></webc-spinner>
+            <div slot="false" class="alert alert-warning" role="alert">
+                <h4 class="alert-heading">No devices yet!</h4>
+                <p>Add your first device!</p>
+            </div>
+            
+            <div class="common-datatable devices-datatable dt-8-col" slot="true">
+
+                <div class="m-2 d-flex flex-column">
+                    <label>Search device:</label>
+                    <input class="form-control" id="search-field" data-view-model="@search" event-name="filters-changed" />
+                </div>
+
+                <div class="m-2" data-if="@noResults">
+                    <strong>There are no results for your search!</strong>
+                </div>
+
+                <webc-datatable datasource="@devicesDataSource">
+
+                    <div slot="header">Device ID</div>
+                    <div slot="header">Brand</div>
+                    <div slot="header">Model</div>
+                    <div slot="header">Status</div>
+                    <div slot="header">Assignation Status</div>
+                    <div slot="header">Trial Name</div>
+                    <div slot="header">Trial ID</div>
+                    <div slot="header">Options</div>
+
+
+                    <div class="cell">{{ @deviceId }}</div>
+                    <div class="cell">{{ @brand }}</div>
+                    <div class="cell">{{ @modelNumber }}</div>
+
+                    <div class="cell">
+                        <webc-switch condition="@status">
+                            <span slot="Active" class="badge badge-success">Active</span>
+                            <span slot="Inactive" class="badge badge-warning">Inactive</span>
+                            <span slot="Entered in error" class="badge badge-danger">Entered in error</span>
+                            <span slot="Unknown" class="badge badge-secondary">Unknown</span>
+                        </webc-switch>
+                    </div>
+
+                    <div class="cell">
+                        <div data-if="@isAssigned">
+                            <span slot="true" type="button" class="badge badge-success">
+                                Assigned <span class="badge badge-light assigned-tp">{{@tpNumber}}</span>
+                            </span>
+                            <webc-switch condition="@status" slot="false">
+                                <span slot="Active" class="badge badge-success">Available for Assignment</span>
+                                <span slot="Inactive" class="badge badge-secondary">Not available for assignation</span>
+                                <span slot="Entered in error" class="badge badge-secondary">Not available for assignation</span>
+                                <span slot="Unknown" class="badge badge-secondary">Not available for assignation</span>
+                            </webc-switch>
+                        </div>
+                    </div>
+
+                    <div class="cell">{{ @trialName }}</div>
+                    <div class="cell">{{ @trialID }}</div>
+                    <div class="cell">
+                        <button class="link-button" data-tag="edit">Edit</button>
+                        <label> | </label>
+                        <button class="link-button" data-tag="archive">Archive</button>
+                    </div>
+
+                </webc-datatable>
+            </div>
+
+        </div>
+
+        <footer class="button-group-wrapper">
+            <button data-tag="devices:add">Add Device</button>
+        </footer>
+    </div>
+</webc-container>

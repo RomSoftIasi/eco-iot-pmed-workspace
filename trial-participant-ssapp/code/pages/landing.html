@@ -1,0 +1,132 @@
+<webc-container controller="general/LandingController" class="landing-webc-container">
+    <div class="container">
+
+        <header>
+            <div class=" p-2 text-center logo-container">
+                <img src="./assets/images/pharma_logo.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="landing-profile-picture" data-if="@publicDidReady">
+                <picture slot="true">
+                    <img src="@profilePicture" class="img-fluid img-thumbnail rounded-circle" style="object-fit: cover;">
+                    <button disabled="@notAssigned" class="edit-btn-wrapper" data-tag="navigate:my-profile">
+                    </button>
+                    <div class="notifications-btn-container">
+                        <label class="notifications-btn-wrapper" data-tag="navigate:notifications"
+                               active-notifications="@hasNotifications">
+                        </label>
+                        <div data-if="@hasNotifications" class="notifications-container">
+                            <label class="notification-badge">
+                                <span class="notifications-number">{{@notificationsNumber}}</span>
+                            </label>
+                        </div>
+                    </div>
+                </picture>
+
+                <div slot="false" class="d-flex flex-column align-items-center justify-content-center wallet-initializing-info">
+                    <div class="row">
+                        <div class="spinner-border text-info" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <strong>Wallet is initializing...</strong>
+                    </div>
+                </div>
+
+
+            </div>
+        </header>
+        <div data-if="@publicDidReady">
+
+            <div class="input-group share-did p-2">
+                <input type="text" class="form-control share-did-input" readonly value="@did" placeholder="Loading DID...">
+                <div class="input-group-append">
+                        <span class="did-tooltip">
+                            <button class="btn btn-outline-secondary share-did-btn" type="button" data-tag="share-did">
+                                <i class="fa fa-qrcode"></i>
+                            </button>
+                          </span>
+                </div>
+            </div>
+
+
+            <div class="main-navigation">
+
+
+                <div data-if="@notAssigned">
+                    <div class="alert alert-warning m-2 text-center" role="alert">
+                        <i class="fa-solid fa-house-medical-circle-exclamation"></i>
+                        You are not assigned to any trial yet
+                    </div>
+                </div>
+
+                <div class="container">
+
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-subtitle>Clinical Trial</ion-card-subtitle>
+                        </ion-card-header>
+                        <ion-card-content>
+
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-around">
+                                    <button class="navigation-btn" data-tag="navigate:consent-status" disabled="@notAssigned">
+                                        <i class="fa fa-th-list"></i>
+                                        <span>Consents</span>
+                                    </button>
+                                </div>
+
+                                <div class="col-4 d-flex justify-content-around">
+                                    <button class="navigation-btn" data-tag="navigate:task-calendar" disabled="@notAssigned">
+                                        <i class="fa fa-calendar"></i>
+                                        <span>Calendar</span>
+                                    </button>
+                                </div>
+
+                                <div class="col-4 d-flex justify-content-around">
+                                    <button class="navigation-btn" data-tag="navigate:iot-devices" disabled="@notAssigned">
+                                        <i class="fa fa-calculator"></i>
+                                        <span>Medical Data</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </ion-card-content>
+                    </ion-card>
+
+
+                            <ion-card>
+                                <ion-card-header>
+                                    <ion-card-subtitle>Sharing Health Data</ion-card-subtitle>
+                                </ion-card-header>
+                                <ion-card-content>
+
+                                    <div class="row">
+
+                                        <div class="col-6 d-flex justify-content-around">
+                                            <button class="navigation-btn" data-tag="navigate:sharing-permissions" disabled="@notAssigned">
+                                                <i class="fa fa-check"></i>
+                                                <span>Permissions</span>
+                                            </button>
+                                        </div>
+
+
+                                        <div class="col-6 d-flex justify-content-around">
+                                            <button class="navigation-btn" data-tag="navigate:health-studies" disabled="@notAssigned">
+                                                <i class="fa fa-database"></i>
+                                                <span>Health studies</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </ion-card-content>
+                            </ion-card>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</webc-container>

@@ -1,0 +1,226 @@
+button[disabled]{
+    opacity: 0.5;
+}
+.button-menu {
+    color: #FFFFFF;
+    padding: 0.125rem 1.75rem;
+    background: var(--secondary);
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    font-size: 18px;
+}
+
+.button-transparent {
+    color: #000000;
+    background: transparent;
+}
+
+.button-menu:hover,
+.button-menu:focus,
+.button-menu:active {
+    color: #000000;
+    background: transparent;
+    border-color: var(--secondary);
+}
+
+.button-group-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 0 5%;
+    width: 100%;
+    column-gap: 3rem;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}
+
+.button-group-wrapper div {
+    display: none;
+}
+
+.button-group-wrapper div[data-if] {
+    display: block;
+}
+
+.button-group-wrapper button {
+    background: var(--secondary);
+    border: 1px solid transparent;
+    border-radius: 0.35rem;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    text-decoration: none;
+    min-height: 4rem;
+    width: 10rem;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    transition: all ease-in 0.1s;
+}
+
+
+.button-group-wrapper button[disabled],
+.button-group-wrapper button[disabled]:hover {
+    background: #C8C8C8;
+    border: #A5A5A5;
+    color: #FFF;
+
+}
+
+.button-group-wrapper button:hover,
+.button-group-wrapper button:active,
+.button-group-wrapper button:focus {
+    background: transparent;
+    border: 1px solid var(--secondary);
+    color: #000000;
+}
+
+.big-button {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.125rem;
+    border-radius: 0.25rem;
+    height: 55px;
+    width: 160px;
+}
+
+.link-button,
+.link-button:focus,
+.link-button:focus:hover {
+    background: none;
+    border: none;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    text-align: left;
+    font-size: 16px;
+    color: #2F80ED;
+    margin: 0.25rem;
+    outline: none;
+}
+
+.link-button:hover {
+    color: #2773d9
+}
+
+button.link.option{
+    padding: 0.125rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    color: var(--primary);
+    background: transparent;
+    cursor: pointer;
+    text-decoration:none
+}
+
+button.link.option[disabled]{
+    pointer-events: none;
+    color:#777;
+}
+
+button.link.option:hover{
+    color: #000000;
+    border-color: var(--secondary);
+}
+
+.notification-button {
+    background-color: white;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border-radius: 0.25rem;
+    width: 75%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.clear-button {
+    background-color: #008798;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 25px;
+    height: 45px;
+    width: 150px;
+}
+
+.previous-next-button {
+    background-color: #008798;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 11px;
+    border-radius: 5px;
+    margin-left: 25px;
+    height: 20px;
+    width: 90px;
+}
+
+.add-answer-button {
+    background-color: #008798;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    height: 38px;
+    width: 100px;
+    margin: auto;
+}
+
+.prom-prem-tab-buttons {
+    border: none;
+    background-color: #008798;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    width: auto;
+    margin-right: 100px;
+    transition: 0.3s;
+}
+
+.questions-tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #008798;
+}
+
+.questions-tab button:hover {
+    background: #C8C8C8;
+    border: #A5A5A5;
+    color: #FFF;
+}
+
+.questions-tab button.active {
+    background-color: #ccc;
+}
+
+@media screen and (max-width: 991px) {
+    .notification-button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 759px) {
+    .notification-button {
+        height: 3.5rem;
+    }
+}

@@ -1,0 +1,30 @@
+<webc-container controller="iot/ViewFeedbackController">
+    <div class="container-child">
+
+        <div class="header-title">
+            <button class="navigate-back" data-tag="navigation:go-back">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <h3>View Feedback</h3>
+        </div>
+
+        <div class="container justify-content-start">
+
+            <ion-card class="card">
+                <ion-card-content>
+                    <div class="card-item title-container d-flex justify-content-between">
+                        <p class="study-title">
+                            {{@feedback_subject}}
+                        </p>
+                        <span>{{ @date }}</span>
+                    </div>
+                    <div>
+                        <p class="study-description">
+                            {{@feedback_content}}
+                        </p>
+                    </div>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+</webc-container>

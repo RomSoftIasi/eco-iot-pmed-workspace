@@ -1,0 +1,51 @@
+<webc-container controller="iot/ViewResultController">
+    <div class="container-child">
+
+        <div class="header-title">
+            <button class="navigate-back" data-tag="navigation:go-back">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <h3>View Results</h3>
+        </div>
+
+        <div class="container justify-content-start">
+            <main>
+                <ion-card class="card">
+                    <ion-card-content>
+                        <div class="card-item d-flex justify-content-between">
+                            <webc-switch condition="@status">
+                                <span slot="draft" class="badge badge-primary study-status">Draft</span>
+                                <span slot="active" class="badge badge-success study-status">Active</span>
+                                <span slot="retired" class="badge badge-info study-status">Retired</span>
+                                <span slot="unknown" class="badge badge-secondary study-status">Unknown</span>
+                            </webc-switch>
+
+                            <span>Version: {{@version}}</span>
+                        </div>
+                        <div class="card-item">
+                            <p class="study-title">
+                                {{@title}}
+                            </p>
+                            <p class="study-subtitle">{{@subtitle}}</p>
+                        </div>
+                        <div class="card-item d-flex">
+                            <p>Topics: {{@topics}}</p>
+                        </div>
+                        <div class="card-item d-flex">
+                            <p>Exposure Background: {{@exposureBackground}}</p>
+                        </div>
+                        <div class="card-item">
+                            <p>Description: {{@description}}</p>
+                        </div>
+                        <div data-if="@filename">
+                            <div class="card-item d-flex justify-content-between">
+                                <p>{{@attachedFile.label}}</p>
+                                    <button data-tag="download-file" class="badge badge-primary study-status">{{@attachedFile.button}}</button>
+                            </div>
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+            </main>
+        </div>
+    </div>
+</webc-container>

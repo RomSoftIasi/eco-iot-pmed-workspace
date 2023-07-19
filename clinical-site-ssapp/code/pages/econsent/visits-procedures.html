@@ -1,0 +1,136 @@
+<webc-container controller="econsent/VisitsAndProceduresController">
+    <div class="container main-container stepper-3-rows-grid">
+        <div class="container flex-container">
+            <breadcrumb-navigator></breadcrumb-navigator>
+            <h5 class="generic-title">Visits & Procedures</h5>
+            <webc-template template="alert" data-view-model="@" class="w-100"></webc-template>
+        </div>
+
+        <main>
+
+            <div data-if="@dataSourceInitialized">
+                <webc-spinner slot="loading"></webc-spinner>
+
+                <div class="alert alert-warning" role="alert" slot="false">
+                    <h4 class="alert-heading">No visits yet!</h4>
+                </div>
+
+                <div class="common-datatable visits-procedures dt-10-col" slot="true" data-if="@siteHasVisits">
+
+                    <webc-datatable datasource="@visitsDataSource">
+
+                        <div slot="header">Status</div>
+                        <div slot="header">Visits</div>
+                        <div slot="header">Week</div>
+                        <div slot="header">Day</div>
+                        <div slot="header">+Days</div>
+                        <div slot="header">-Days</div>
+                        <div slot="header">Proposed date</div>
+                        <div slot="header">Appointment Status</div>
+                        <div slot="header">Planned Date</div>
+                        <div slot="header">Actions</div>
+
+
+                        <div class="cell">
+                            <webc-switch condition="@status">
+                                <span slot="partial-confirmed" class="badge badge-warning partial-confirmed">
+                                    <i class="fa fa-circle-o-notch fa-2x"></i>
+                                </span>
+                                <span slot="all-confirmed" class="badge badge-success">
+                                    <i class="fa fa-check-circle fa-2x"></i>
+                                </span>
+                                <span slot="missed" class="badge badge-danger">
+                                    <i class="fa fa-times-circle fa-2x"></i>
+                                </span>
+                                <span slot="N/A">
+                                    N/A
+                                </span>
+                            </webc-switch>
+                        </div>
+
+                        <div class="cell">{{@name}}</div>
+                        <div class="cell">{{@week}}</div>
+                        <div class="cell">{{@day}}</div>
+                        <div class="cell">{{@windowFrom}}</div>
+                        <div class="cell">{{@windowTo}}</div>
+
+                        <div data-if="@hasProposedDate" class="cell">
+                            <div slot="true">{{@toShowDate}}</div>
+                            <div slot="false">-</div>
+                        </div>
+
+                        <div class="cell">
+                            <webc-switch condition="@tsAcceptance">
+                                <span slot="required" class="badge badge-primary">Required</span>
+                                <span slot="agreed" class="badge badge-primary">Confirmed</span>
+                                <span slot="confirmed-by-both" class="badge badge-success">Confirmed</span>
+                                <span slot="declined" class="badge badge-danger">Declined</span>
+                                <span slot="rescheduled" class="badge badge-secondary">Rescheduled</span>
+                                <span slot="rescheduled-by-hco" class="badge badge-secondary"> Rescheduled</span>
+                                <span slot="scheduled" class="badge badge-primary">Scheduled</span>
+                            </webc-switch>
+                        </div>
+
+                        <div data-if="@confirmed" class="cell">
+                            <div slot="true">{{@confirmedDate}}</div>
+                            <div slot="false">-</div>
+                        </div>
+
+                        <div class="cell">
+                            <div data-if="@rescheduled">
+                                <div data-if="@confirmedDate">
+                                    <button class="link-button view-adjust-margin" data-tag="visit:confirm"
+                                            slot="false">
+                                        Confirm
+                                        Rescheduled
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div data-if="@shouldBeRescheduled" slot="false">
+                                <button class="link-button view-adjust-margin" data-tag="visit:editDate"
+                                        slot="true">
+                                    Reschedule
+                                </button>
+                                <button class="link-button view-adjust-margin" data-tag="visit:setDate"
+                                        slot="false">
+                                    Schedule
+                                </button>
+                            </div>
+                            <div data-if="@confirmedDate">
+                                <button class="link-button view-adjust-margin" data-tag="visit:view">Confirm
+                                    Attendance
+                                </button>
+                            </div>
+                        </div>
+
+                    </webc-datatable>
+                </div>
+
+            </div>
+        </main>
+
+        <div class="d-flex flex-row justify-content-around align-items-center">
+            <div>
+                <span class="badge badge-warning partial-confirmed">
+                    <i class="fa fa-circle-o-notch fa-2x"></i>
+                </span>
+                <span>Procedures were partial completed</span>
+            </div>
+
+            <div>
+            <span class="badge badge-success">
+                <i class="fa fa-circle-o-notch fa-2x"></i>
+            </span>
+                <span>Procedures were all completed</span>
+            </div>
+
+            <div>
+            <span class="badge badge-danger">
+                <i class="fa fa-circle-o-notch fa-2x"></i>
+            </span>
+                <span>Procedures were all missed</span>
+            </div>
+        </div>
+    </div>
+</webc-container>

@@ -1,0 +1,16 @@
+delete /
+addfolder code
+addfile ../opendsu-sdk/psknode/bundles/pskruntime.js scripts/bundles/pskruntime.js
+addfile ../opendsu-sdk/psknode/bundles/webshims.js scripts/bundles/webshims.js
+addfile ../opendsu-sdk/psknode/bundles/iframeBoot.js scripts/bundles/iframeBoot.js
+
+addfile ../common-services/build/bundles/commonServices.js scripts/bundles/commonServices.js
+
+addfile ../common-services/utils/third-parties/fontawesome5.min.js scripts/third-parties/fontawesome5.min.js
+addfile ../common-services/utils/third-parties/uuidv4.min.js scripts/third-parties/uuidv4.min.js
+addfile ../common-services/utils/third-parties/papaparse.min.js scripts/third-parties/papaparse.min.js
+addfile ../common-services/utils/third-parties/pdf.js scripts/third-parties/pdf.js
+addfile ../common-services/utils/third-parties/pdf.worker.js scripts/third-parties/pdf.worker.js
+
+mount ../webcardinal/seed /webcardinal
+mount ../themes/sponsor-theme/seed /themes/sponsor-theme

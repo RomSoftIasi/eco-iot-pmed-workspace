@@ -1,0 +1,48 @@
+
+.version-name {
+    margin-right: 10px;
+}
+
+p.version-name {
+    margin-bottom:0;
+}
+
+.consent-status {
+    color: #008798;
+    font-weight: 700;
+}
+
+.fa-file-text-o {
+    font-size: 1.5rem;
+}
+
+.consent-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.button-link-option {
+    padding: 0.125rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    color: #008798;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+[status-type="warning"] { color: red; }
+
+.consent-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon-container {
+    position: relative;
+}

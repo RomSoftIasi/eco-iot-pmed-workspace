@@ -1,0 +1,130 @@
+<webc-container controller="econsent/TrialParticipantsController">
+    <link href="./assets/css/pages/trial-participants.css" rel="stylesheet">
+
+    <div class="container main-container">
+        <div class="container flex-container">
+            <breadcrumb-navigator></breadcrumb-navigator>
+            <h5 class="generic-title">{{@trial.id}} {{@trial.name}}</h5>
+        </div>
+        <webc-template template="alert" data-view-model="@" class="w-100"></webc-template>
+
+        <main class="items-container">
+
+            <div class="period-and-statistics-container">
+                <div class="my-0 mx-auto">
+                    <div data-if="@trial.recruitmentPeriod.toShowDate ">
+                        <div class="alert alert-light" role="alert" slot="true">
+                            Recruitment period: {{@trial.recruitmentPeriod.toShowDate}} - <strong>{{@trial.recruitmentPeriod.recruitingStage}}</strong>
+                        </div>
+                        <div class="alert alert-light" role="alert" slot="false">
+                            Recruitment period not set yet
+                        </div>
+                    </div>
+                </div>
+
+               <div class="d-flex align-items-center">
+                   <div class="overview-statistics period-and-statistics-item">
+                       <div><span>Planned</span> <span>{{@statistics.planned}}</span></div>
+                       <div><span>Screened</span> <span>{{@statistics.screened}}</span></div>
+                       <div><span>Enrolled</span> <span>{{@statistics.enrolled}}({{@statistics.percentage}})</span></div>
+                       <div><span>Withdrawn</span> <span>{{@statistics.withdrew}}</span></div>
+                       <div><span>Declined Trial</span> <span>{{@statistics.declined}}</span></div>
+                       <div><span>In Treatment</span> <span>{{@statistics.inTreatment}}</span></div>
+                       <div><span>End of treatment</span> <span>{{@statistics.endOfTreatment}}</span></div>
+                       <div><span>Completed</span> <span>{{@statistics.completed}}</span></div>
+                       <div><span>Discontinued</span> <span>{{@statistics.discontinued}}</span></div>
+                       <div><span>Scr. failed</span> <span>{{@statistics.screenFailed}}</span></div>
+                   </div>
+                   <div class="d-flex action-buttons">
+                       <button class="action-button add-btn" data-tag="add:ts" disabled="@addParticipantsIsDisabled">Add
+                           Trial Subject
+                       </button>
+                   </div>
+               </div>
+            </div>
+
+            <div data-if="@dataSourceInitialized">
+                <webc-spinner slot="loading"></webc-spinner>
+
+                <div class="common-datatable trial-participant dt-6-col" slot="true" data-if="@siteHasConsents">
+
+                    <div class="alert alert-light d-flex justify-content-center" role="alert" slot="false">
+                        <p>
+                            No consents are added to this site. Sponsor <b>"{{@trial.sponsor}}"</b>should add a
+                            consent
+                            before you will be able to add a trial participant.
+                        </p>
+                    </div>
+
+                    <div slot="true" data-if="@hasTps">
+                        <div slot="true">
+                            <div class="m-2 d-flex flex-column">
+                                <label>Search trial participant:</label>
+                                <input class="form-control" id="search-field" data-view-model="@search"
+                                       event-name="filters-changed"/>
+                            </div>
+
+                            <div class="m-2" data-if="@hasNoSearchResults">
+                                <div class="alert alert-warning" role="alert">
+                                    Search filter does not match any results.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div slot="true" data-if="@hasNoSearchResults">
+                        <webc-datatable datasource="@trialParticipantsDataSource" slot="false">
+
+                            <div slot="no-data" class="alert alert-warning" role="alert">
+                                <h4 class="alert-heading">No trial participants yet!</h4>
+                                <p>Add your first trial participants!</p>
+                            </div>
+
+                            <div slot="header">Name</div>
+                            <div slot="header">Number</div>
+                            <div slot="header">Birthday</div>
+                            <div slot="header">Status</div>
+                            <div slot="header">Notification for action</div>
+                            <div slot="header">Overview</div>
+
+
+                            <div class="cell">{{@name}}{{@lastName}}</div>
+                            <div class="cell">{{@number}}</div>
+                            <div class="cell">{{@birthdate}}</div>
+                            <div class="cell">{{@status}}</div>
+
+                            <div class="cell">
+                                <webc-switch condition="@notificationColor">
+                                    <span slot="success" class="badge badge-success">{{@actionNeeded}}</span>
+                                    <span slot="warning" class="badge badge-warning">{{@actionNeeded}}</span>
+                                    <span slot="danger" class="badge badge-danger">{{@actionNeeded}}</span>
+                                    <span slot="primary" class="badge badge-primary">{{@actionNeeded}}</span>
+                                </webc-switch>
+                            </div>
+
+                            <div class="cell">
+                                <button class="link-button" data="@id" data-tag="tp:status">Status</button>
+                                <label> | </label>
+                                <button class="link-button" data="@id" data-tag="tp:details">Consents</button>
+                                <label> | </label>
+                                <button class="link-button" data="@" data-tag="tp:devices" disabled="@cannotManageDevicesAndVisits">
+                                    Devices
+                                </button>
+                                <label> | </label>
+                                <button class="link-button" data="@" data-tag="tp:visits" disabled="@cannotManageDevicesAndVisits">
+                                    Visits
+                                </button>
+                                <label> | </label>
+                                <button class="link-button" data="@id" data-tag="tp:answers" >Answers</button>
+                            </div>
+
+                        </webc-datatable>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</webc-container>

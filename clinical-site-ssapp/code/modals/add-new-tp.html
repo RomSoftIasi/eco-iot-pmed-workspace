@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="./assets/css/pages/general_modal.css">
+<h2 slot="header" class="alert-title">Add New Trial Subject</h2>
+<div class="top">
+    <div class="line">
+        <div class="left-div">
+            <div class="form-group">
+                <label for="patientFullName">{{@name.label}}</label>
+                <input id="patientFullName" class="form-control" value="@name.value" placeholder="@name.placeholder"/>
+            </div>
+
+
+            <div class="form-group">
+                <label>{{@did.label}}</label>
+                <div class="input-group" is-invalid="@didDoesNotExist">
+                    <did-input id="patientDID" class="form-control" data-view-model="@did"></did-input>
+                </div>
+                <div data-if="@didDoesNotExist">
+                    <div class="invalid-feedback d-block">
+                        <i class="fa fa-exclamation-circle"></i>This DID does not exist.
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="anonymizedDID">{{@anonymizedDID.label}}</label>
+                <div class="input-group">
+                    <input id="anonymizedDID" readonly class="form-control" value="@anonymizedDID.value" placeholder="@anonymizedDID.placeholder"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" data-tag="refresh-identifier">
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="gender">{{@gender.label}}</label>
+                <select class="form-control"  data-for="@gender.options" value="@gender.value" id="gender">
+                    <option data-view-model="@"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">{{@birthdate.label}}</label>
+                <input id="birthdate" class="form-control" type="month" data-view-model="@birthdate">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="line" data-if="@isUnder18">
+        <hr>
+        <small class="form-text text-muted">*to be completed if trial subject is under 18.</small>
+        <div class="left-div">
+            <div class="form-group">
+                <label for="parent1DID">{{@didParent1.label}}</label>
+                <div class="input-group">
+                    <input id="parent1DID" class="form-control" value="@didParent1.value"
+                           placeholder="@didParent1.placeholder"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary share-did-btn" type="button">
+                            <i class="fa fa-qrcode"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parent1DID">{{@didParent2.label}}</label>
+                <div class="input-group">
+                    <input id="parent2DID" class="form-control" value="@didParent2.value"
+                           placeholder="@didParent2.placeholder"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary share-did-btn" type="button">
+                            <i class="fa fa-qrcode"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr/>
+</div>
+<div class="bottom">
+    <button class="tp-button wide-button inverted-colors" slot="footer" data-tag="tp:submit" disabled="@isBtnDisabled">Add Subject</button>
+    <button class="tp-button wide-button inverted-colors" slot="footer" data-close>Cancel</button>
+</div>

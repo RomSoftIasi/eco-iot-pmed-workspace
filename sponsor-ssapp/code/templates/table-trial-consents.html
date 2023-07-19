@@ -1,0 +1,29 @@
+<webc-container class="common-datatable dt-6-col" controller="template-controllers/TableTemplateController" data-view-model="@">
+    <webc-datatable datasource="@dataSource">
+        <div slot="header">Consent Name</div>
+        <div slot="header">Attachment</div>
+        <div slot="header">Date</div>
+        <div slot="header">Type</div>
+        <div slot="header">Version</div>
+        <div slot="header">Options</div>
+
+        <div class="cell">{{@name}}</div>
+        <div class="cell">{{@attachment}}</div>
+        <div class="cell">{{@versionDate}}</div>
+        <div class="cell">{{@type}}</div>
+        <div class="cell">{{@version}}</div>
+        <div class="cell">
+            <button class="btn btn-bare btn-link" data-tag="view-attachment">Preview</button>
+            |
+            <button class="btn btn-bare btn-link" data-tag="view-consent-history">Consent History</button>
+            |
+            <button class="btn btn-bare btn-link" data-tag="add-trial-version" disabled="@trialIsNotActive">Add Version</button>
+            |
+            <button class="btn btn-bare btn-link" data-tag="view-visits">Visits</button>
+        </div>
+
+        <div class="flex flex-row justify-content-center align-items-center" slot="no-data">There are no items to
+            display
+        </div>
+    </webc-datatable>
+</webc-container>

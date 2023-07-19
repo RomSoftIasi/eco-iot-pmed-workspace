@@ -1,0 +1,190 @@
+<webc-container controller="iot/ViewStudyDetailsController">
+
+    <webc-switch condition="@pageType">
+
+        <div slot="participating-study" class="container-child view-study-details">
+
+        <header>
+            <div class="header-title">
+                <button class="navigate-back" data-tag="navigation:go-back-participating-study">
+                    <i class="fa fa-angle-left"></i>
+                </button>
+                <h3>Participating Studies</h3>
+            </div>
+        </header>
+
+        <div>
+
+            <div>
+                <p>Hello! You are participating in the following study. Thanks for donating your data for research purposes.</p>
+            </div>
+
+            <div class="container justify-content-start">
+                <main>
+                    <ion-card class="card">
+                        <ion-card-content>
+                            <div class="card-item d-flex justify-content-between">
+                                <webc-switch condition="@study.status">
+                                    <span slot="approved" class="badge badge-primary study-status">Approved</span>
+                                    <span slot="active" class="badge badge-success study-status">Active</span>
+                                    <span slot="cancelled" class="badge badge-danger study-status">Cancelled</span>
+                                    <span slot="onHold" class="badge badge-warning study-status">On Hold</span>
+                                    <span slot="closed" class="badge badge-secondary study-status">Closed</span>
+                                    <span slot="withdrawn" class="badge badge-dark study-status">Withdrawn</span>
+                                    <span slot="completed" class="badge badge-complete study-status">Completed</span>
+                                </webc-switch>
+                                <span>
+                                        {{ @study.startdate }} - {{ @study.enddate }}
+                                </span>
+                            </div>
+                            <div class="card-item">
+                                <p class="study-title">
+                                    {{@study.title}}
+                                </p>
+                                <span>Data being gathered:</span>
+                                <div data-for="@study.data">
+                                    <span class="badge badge-primary study-datatype">{{@}}</span>
+                                </div>
+                            </div>
+                            <div class="card-item title-container">
+                                <p>{{@study.description}}</p>
+                            </div>
+                            <div>
+                                <ion-button expand="block" color="green" data-tag="stop-sharing">
+                                    Revoke sharing
+                                </ion-button>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </main>
+            </div>
+
+        </div>
+    </div>
+
+        <div slot="pending-invitations" class="container-child view-study-details">
+    
+            <header>
+                <div class="header-title">
+                    <button class="navigate-back" data-tag="navigation:go-back-pending-invitations">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+                    <h3>Pending Invitations</h3>
+                </div>
+            </header>
+    
+            <div>
+
+                <div>
+                    <p>Hello! The investigators of the following study, are interested in using your data for research purposes. Details about the study are given below. If you agree to participate in this study press the confirm button bellow.</p>
+                </div>
+
+                <div class="container justify-content-start">
+                    <main>
+
+                        <ion-card class="card">
+                            <ion-card-content>
+                                <div class="card-item d-flex justify-content-between">
+                                    <webc-switch condition="@study.status">
+                                        <span slot="approved" class="badge badge-primary study-status">Approved</span>
+                                        <span slot="active" class="badge badge-success study-status">Active</span>
+                                        <span slot="cancelled" class="badge badge-danger study-status">Cancelled</span>
+                                        <span slot="onHold" class="badge badge-warning study-status">On Hold</span>
+                                        <span slot="closed" class="badge badge-secondary study-status">Closed</span>
+                                        <span slot="withdrawn" class="badge badge-dark study-status">Withdrawn</span>
+                                        <span slot="completed" class="badge badge-complete study-status">Completed</span>
+                                    </webc-switch>
+                                    <span>
+                                        {{ @study.startdate }} - {{ @study.enddate }}
+                                </span>
+                                </div>
+                                <div class="card-item">
+                                    <p class="study-title">
+                                        {{@study.title}}
+                                    </p>
+                                    <span>Data being gathered:</span>
+                                    <div data-for="@study.data">
+                                        <span class="badge badge-primary study-datatype">{{@}}</span>
+                                    </div>
+                                </div>
+                                <div class="card-item">
+                                    <p>{{@study.description}}</p>
+                                </div>
+                                <div data-if="@canJoinStudy" >
+                                        <div slot="true" class="btns-container">
+                                            <div class="d-flex justify-content-between btns-container-item">
+                                                <ion-button color="danger" data-tag="reject">
+                                                    Reject
+                                                </ion-button>
+                                                <ion-button color="green" data-tag="confirm">
+                                                    Confirm
+                                                </ion-button>
+                                            </div>
+                                        </div>
+                                    <div slot="false" class="btns-container">
+                                        <ion-button  color="danger" data-tag="reject" class="w-100 mt-2">
+                                            Dismiss
+                                        </ion-button>
+                                    </div>
+
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </main>
+                </div>
+            </div>
+                
+        </div>
+
+        <div slot="completed-studies" class="container-child view-study-details">
+
+            <header>
+                <div class="header-title">
+                    <button class="navigate-back" data-tag="navigation:go-back-completed-study">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+                    <h3>Completed Study</h3>
+                </div>
+            </header>
+
+            <div>
+
+                <div>
+                    <p>Hello! You participated in the following study. Thanks for sharing you data!</p>
+                </div>
+
+                <div class="container justify-content-start">
+                    <main>
+                        <ion-card class="card">
+                            <ion-card-content>
+                                <div class="card-item d-flex justify-content-between">
+                                    <span class="study-status badge badge-complete">{{@study.status}}</span>
+                                    <span>
+                                        {{ @study.startdate }} - {{ @study.enddate }}
+                                </span>
+                                </div>
+                                <div class="card-item">
+                                    <p class="study-title">
+                                        {{@study.title}}
+                                    </p>
+                                    <span>Data being gathered:</span>
+                                    <div data-for="@study.data">
+                                        <span class="badge badge-primary study-datatype">{{@}}</span>
+                                    </div>
+                                </div>
+                                <div class="card-item">
+                                    <p>{{@study.description}}</p>
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </main>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </webc-switch>
+
+</webc-container>

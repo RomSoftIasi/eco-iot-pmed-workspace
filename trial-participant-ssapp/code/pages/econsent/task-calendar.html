@@ -1,0 +1,104 @@
+<link href="./assets/css/pages/visits.css" rel="stylesheet">
+<webc-container controller="econsent/TaskCalendarController">
+
+    <div class="container-child">
+        <div class="header-title">
+            <button class="navigate-back" data-tag="back">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <h3>My Calendar</h3>
+        </div>
+        <ion-app class="ionic-wrapper">
+            <ion-tabs>
+                <ion-tab tab="calendar">
+                    <ion-header translucent>
+
+                    </ion-header>
+                    <ion-content fullscreen class="ion-padding">
+                        <div class="calendar-section">
+                            <pl-calendar></pl-calendar>
+                        </div>
+                    </ion-content>
+                </ion-tab>
+
+                <ion-tab tab="invitations">
+
+                    <ion-content fullscreen class="ion-padding">
+
+                        <div class="title">Invitations</div>
+                        <div data-if="@hasInvitations">
+                        <div slot="true">
+                            <div data-for="@visits">
+
+                                <ion-card class="current-visit">
+                                    <ion-card-header>
+                                        <ion-card-subtitle>
+                                            <h2 class="w-100 text-center pl-3 pr-3">Visit {{@name}}</h2>
+                                        </ion-card-subtitle>
+                                    </ion-card-header>
+                                    <ion-card-content>
+                                        <div>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="calendar-icon-container">
+                                                    <i class="fa fa-calendar"></i> <span class="visit-date">{{@visitDate}}</span>
+                                                </div>
+
+                                                <div class="invitation-details">
+                                                    <div>
+                                                        <span class="badge badge-info">Pending</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="button-group-wrapper flex-column">
+                                                <div class="w-100">
+                                                <button class="general-button w-100" data-tag="visit:confirm">
+                                                    <i class="fa fa-check-circle-o"></i>
+                                                    Accept
+                                                </button>
+                                                </div>
+                                                <div class="w-100 reschedule-decline-invitation">
+                                                    <button class="general-button w-50 reschedule-visit-btn"
+                                                            data-tag="reschedule-invitation">
+                                                        Reschedule
+                                                    </button>
+                                                    <button class="general-button w-50 decline-visit-btn" data-tag="visit:decline">
+                                                        Decline
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </ion-card-content>
+                                </ion-card>
+
+                            </div>
+                        </div>
+                        <div slot="false">
+                            <div class="alert alert-light" role="alert">
+                                No new invitations were sent to you
+                            </div>
+                        </div>
+                        </div>
+                    </ion-content>
+                </ion-tab>
+
+
+                <ion-tab-bar slot="bottom">
+                    <ion-tab-button tab="calendar">
+                        <ion-label>Calendar</ion-label>
+                        <ion-icon name="calendar-outline"></ion-icon>
+                    </ion-tab-button>
+                    <ion-tab-button tab="invitations">
+                        <ion-label>Invitations</ion-label>
+                        <ion-badge>{{@invitationsNumber}}</ion-badge>
+                        <ion-icon name="mail-unread-outline"></ion-icon>
+                    </ion-tab-button>
+                </ion-tab-bar>
+            </ion-tabs>
+
+        </ion-app>
+
+    </div>
+    </div>
+
+</webc-container>

@@ -1,0 +1,65 @@
+breadcrumb-navigator{
+    width:100%;
+}
+#breadcrumb {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    color: var(--main-color-light);
+    background: #c2ced8;
+    scrollbar-color: var(--main-color-light);
+    scrollbar-width: thin;
+    padding: 0.5rem;
+}
+
+#breadcrumb::-webkit-scrollbar {
+    height: 0.5rem;
+}
+
+#breadcrumb::-webkit-scrollbar-thumb {
+    background-color: var(--main-color-light);
+    border-radius: 1.5rem;
+}
+
+#breadcrumb button {
+    color: var(--main-color);
+}
+
+#breadcrumb button[disabled] {
+
+    color: #777;
+}
+
+
+#breadcrumb button::after {
+    padding: 8px;
+    content: "\f105";
+    font-family: "FontAwesome";
+}
+
+#breadcrumb button:first-of-type::before {
+    padding: 5px;
+    content: "\f015";
+    font-family: "FontAwesome";
+}
+
+#breadcrumb button:last-of-type::after {
+    content: none;
+}
+
+#breadcrumb button,
+#breadcrumb button:focus,
+#breadcrumb button:active,
+#breadcrumb button:active:focus,
+#breadcrumb button:hover {
+    background: unset;
+    border: unset;
+    box-shadow: unset;
+    outline: none !important;
+}

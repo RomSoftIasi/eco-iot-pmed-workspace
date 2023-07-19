@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PSK App Core</title>
+    PLACEHOLDER_THAT_WILL_BE_REPLACED_BY_SW_OR_SERVER_WITH_BASE_TAG
+    <link href="themes/trial-participant-theme/main.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="scripts/bundles/iframeBoot.js"></script>
+    <script src="scripts/bundles/webshims.js"></script>
+    <script src="scripts/bundles/pskruntime.js"></script>
+    <script src="scripts/bundles/commonServices.js"></script>
+
+    <!-- Ionic dist -->
+    <link rel="stylesheet" href="ionic/dist/css/ionic.bundle.css">
+    <script type="module" src="ionic/dist/ionic.esm.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="webcardinal/webcardinal.css">
+    <script type="module" src="webcardinal/webcardinal.js"></script>
+    <script src="scripts/third-parties/pdf.js"></script>
+    <script src="scripts/third-parties/pdf-lib.min.js"></script>
+    <script src="scripts/third-parties/chart.js"></script>
+</head>
+
+<body>
+<webc-app-root preload='scripts/app-config.js'>
+    <webc-app-container>
+                <webc-app-router>
+                </webc-app-router>
+
+        <footer class="eu-container" slot="after">
+            <div class="left-image-eu">
+                <img src="./assets/images/flageu.png" width="120"/>
+            </div>
+            <div class="right-text-eu">
+                <label>
+                    This project has received funding from the European Union’s Horizon
+                    2020 research and innovation programme under grant agreement No 853992
+                </label>
+            </div>
+        </footer>
+
+    </webc-app-container>
+</webc-app-root>
+</body>
+
+</html>

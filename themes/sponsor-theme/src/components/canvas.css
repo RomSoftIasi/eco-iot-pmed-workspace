@@ -1,0 +1,19 @@
+.content {
+    width: 100%;
+    height: 600px;
+}
+
+.content object {
+    width: 100%;
+    height: 10000px;
+}
+
+#canvas-wrapper {
+    justify-content: center;
+    display: flex;
+}
+
+#canvas-parent > * {
+    border: 1px solid black;
+    direction: ltr;
+}

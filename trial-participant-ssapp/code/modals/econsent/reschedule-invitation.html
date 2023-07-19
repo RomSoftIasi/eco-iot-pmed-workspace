@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="./assets/css/pages/general_modal.css">
+
+<h2 slot="header" class="alert-title">Reschedule Visit</h2>
+
+<div class="top">
+
+    <div class="form-group">
+        <label>Reschedule Date</label>
+        <input type="datetime-local" class="form-control" id="procedure-date" data-view-model="@desiredDate">
+
+        <div data-if="@haveSuggestedInterval" class="invalid-feedback">
+            <p>
+                {{@datesInformation}}
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="bottom">
+    <button class="tp-button wide-button inverted-colors" slot="footer" data-tag="tp:submit" disabled="@isBtnDisabled">Done</button>
+    <button class="tp-button wide-button inverted-colors" slot="footer" data-close>Cancel</button>
+</div>
+

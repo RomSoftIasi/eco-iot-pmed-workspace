@@ -1,0 +1,51 @@
+<webc-container controller="iot/PendingInvitationsController">
+
+    <div class="container-child">
+
+        <header>
+            <div class="header-title">
+                <button class="navigate-back" data-tag="navigation:go-back">
+                    <i class="fa fa-angle-left"></i>
+                </button>
+                <h3>Pending Invitations</h3>
+            </div>
+        </header>
+
+        <div>
+            <div data-if="@hasInvitations">
+                <div slot="false" class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">No invitations received yet!</h4>
+                </div>
+
+                <div slot="true" data-for="@studyInvitations">
+                    <ion-card class="card">
+                        <ion-card-content>
+                            <div data-if="@canJoin" class="mb-2">
+                                <span slot="true" class="w-100 study-datatype badge badge-success">Study enrolment is opened</span>
+                                <span slot="false" class="w-100 study-datatype badge badge-secondary">Study enrolment is closed</span>
+                            </div>
+                            <div class="card-item">
+                                <p class="study-title">
+                                    {{@title}}
+                                </p>
+                            </div>
+                            <div class="card-item title-container">
+                                <span>Data requested: </span>
+                                <div data-for="@data">
+                                    <span class="badge badge-primary study-datatype">{{@}}</span>
+                                </div>
+                            </div>
+                            <div>
+                                <ion-button expand="block" color="green" data-tag="view-study-details">
+                                    View
+                                </ion-button>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</webc-container>

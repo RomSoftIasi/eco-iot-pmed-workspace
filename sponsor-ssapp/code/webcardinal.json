@@ -1,0 +1,123 @@
+{
+  "theme": "sponsor-theme",
+  "translations": false,
+  "logLevel": "none",
+  "pages": [
+    {
+      "name": "Trials",
+      "path": "/trials",
+      "src": "trials.html",
+      "tag": "trials",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Trial Consents",
+      "path": "/trials/consents",
+      "src": "trial-consents.html",
+      "tag": "trial-consents",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Preview Consent",
+      "path": "/trials/consents/preview",
+      "src": "preview-consent.html",
+      "tag": "preview-consent",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Trial Consent History",
+      "path": "/trials/consents/history",
+      "src": "consent-history.html",
+      "tag": "consent-history",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Sites",
+      "path": "/sites",
+      "src": "sites.html",
+      "tag": "sites",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Site Consents",
+      "path": "/sites/consents",
+      "src": "site-consents.html",
+      "tag": "site-consents",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Site Consent History",
+      "path": "/sites/consents/history",
+      "src": "site-consent-history.html",
+      "tag": "site-consent-history",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Site Preview Consent",
+      "path": "/sites/consents/preview",
+      "src": "site-preview-consent.html",
+      "tag": "site-preview-consent",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Site Participants",
+      "path": "/sites/participants",
+      "src": "site-participants.html",
+      "tag": "site-participants",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Site Participant's Consents",
+      "path": "/sites/participants/consents",
+      "src": "site-participants-consents.html",
+      "tag": "site-participants-consents",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Site Participant's History",
+      "path": "/sites/participants/history",
+      "src": "site-participants-history.html",
+      "tag": "site-participants-history",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Site Participant's Consent Preview",
+      "path": "/sites/participants/preview",
+      "src": "site-participant-preview.html",
+      "tag": "site-participant-preview",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Site Participant's Status",
+      "path": "/sites/participants/status",
+      "src": "site-participant-status.html",
+      "tag": "site-participant-status",
+      "icon": "fa-times"
+    },
+    {
+      "name": "Participant's Devices",
+      "path": "/sites/participants/devices",
+      "src": "site-participant-devices.html",
+      "tag": "site-participant-devices",
+      "icon": "fa-times"
+    },
+    {
+      "name": "trial",
+      "path": "/trial",
+      "src": "trial.html",
+      "tag": "trial",
+      "indexed": false
+    },
+    {
+      "name": "Visits",
+      "path": "/visits",
+      "src": "visits.html",
+      "tag": "visits",
+      "icon": "fa-times"
+    }
+  ],
+  "pagesFallback": {
+    "name": "404",
+    "src": "./trials.html"
+  }
+}

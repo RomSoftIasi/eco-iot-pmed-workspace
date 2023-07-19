@@ -1,0 +1,40 @@
+<webc-container controller="econsent/e-notifications/NotificationsListController">
+    <div class="container main-container common-2-rows-grid">
+
+        <div class="container flex-container">
+            <breadcrumb-navigator></breadcrumb-navigator>
+            <h5 class="generic-title">Notifications list</h5>
+        </div>
+
+        <div data-if="@notificationsListEmpty">
+            <webc-spinner slot="loading"></webc-spinner>
+            <div slot="true">
+                <div class="alert alert-light d-flex justify-content-center" role="alert">No available notifications</div>
+            </div>
+
+            <div class="common-datatable notifications-datatable dt-3-col" slot="false">
+                <webc-datatable datasource="@notificationsDatasource">
+                    <div slot="header">Notification</div>
+                    <div slot="header">Date</div>
+                    <div slot="header">Recommended Action</div>
+
+
+                    <div class="cell">
+                        <div data-if="@read" data-tag="view-notification" class="mr-2">
+                            <i class="fa fa-star" slot="false"></i>
+                            <i class="fa fa-star-o" slot="true"></i>
+                        </div>
+                        <span>{{@name}}</span>
+                    </div>
+                    <div class="cell">{{@toShowDate}}</div>
+                    <div class="cell">
+                        <!-- <span>N/A</span> -->
+                        <button class="link-button" data-tag="navigation:goToAction">{{@recommendedAction}}</button>
+                    </div>
+                </webc-datatable>
+            </div>
+
+
+        </div>
+        </div>
+</webc-container>

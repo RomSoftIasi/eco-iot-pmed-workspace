@@ -1,0 +1,339 @@
+main>.row-wrapper:nth-child(odd) {
+    background-color: rgba(0, 135, 152, 0.19);
+}
+
+main>.row-wrapper:nth-child(even) {
+    background-color: rgba(0, 52, 91, 0.3);
+}
+
+.row-wrapper {
+    column-gap: 0.5rem;
+    display: grid;
+    grid-template-columns: minmax(40%, auto) repeat(auto-fit, minmax(120px, 1fr));
+    text-align: center;
+    margin: 0.25rem 0;
+    padding: 0 0.75rem;
+}
+
+.assigned-devices {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-equal {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.grid-procedures-view {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.grid-procedures-view.row-wrapper {
+    text-align: start;
+}
+.column-gap-0 {
+    column-gap: 0
+}
+
+.complete-procedures {
+    display:flex;
+}
+
+.complete-procedures label {
+    color: var(--secondary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* start old general.css from econsent */
+
+.row {
+    display: flex;
+}
+
+.subheader {
+    height: 60px;
+    width: 100%;
+    background-color: #CDD7F2;
+    padding: 10px;
+}
+
+.trial-title {
+    font-size: 22px;
+    color: #00345b;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    margin-left: 20px;
+}
+
+.action-button {
+    background-color: #008798;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    height: 55px;
+    width: 160px;
+}
+
+.dispay-flex {
+    display: flex;
+}
+
+object {
+    height: 1200px;
+}
+
+#pdfViewer {
+    overflow-y: scroll;
+}
+
+.econsent-actions {
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.econsent-actions-subcontrols {
+    justify-content: space-evenly;
+}
+
+.econsent-actions-subcontrols > * {
+    margin: 0 30px;
+}
+
+.main-title {
+    font-size: 42px;
+    color: #00345b;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-background {
+    background-color: #00345B;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.front {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    margin: 15px 15px 350px 15px;
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.eu-text {
+    color: white;
+}
+
+.eu-container {
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.pharma-logo {
+    width: 110px;
+    height: 47px;
+    float: left;
+    margin: 10px 0 0 10px;
+}
+
+.logout-button {
+    background-color: #008798;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+    height: 35px;
+    width: 135px;
+    right: 10px;
+    top: 10px;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.right-text-eu {
+    float: left;
+    width: 70%;
+    text-align: center;
+}
+
+.right-text-eu span {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.left-image-eu {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.left-image-eu .image_container {
+    width: 100%;
+}
+
+.left-image-eu .image_container {
+    float: left;
+}
+
+.general-table {
+    width: 100%;
+}
+
+.rows-as-list {
+    display: grid !important;
+}
+
+hr {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.table-like-elements > * {
+    display: table-row;
+}
+
+
+
+.box {
+    float: left;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    clear: both;
+}
+
+.confirmation{
+    display:flex;
+}
+
+.confirmation-item{
+    margin-left: 5px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+/* bootstrap badge*/
+.badge{
+    font-size: 14px;
+}
+
+
+/* study statuses actions*/
+
+.study-status-cell{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+}
+.study-status-cell i{
+    margin-left: 0.5rem;
+}
+
+
+.study-status-actions label.separator:last-of-type{
+    display: none;
+}
+
+.study-status-cell .study-status-actions{
+    display: none;
+    position: absolute;
+}
+
+
+.study-status-cell .study-status-actions:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    width: 0;
+    height: 0;
+    border-right: 5px solid #008798;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+.study-status-cell:hover .study-status-actions{
+    z-index: 200;
+    display: flex;
+    background: white;
+    padding: 0.75rem 0.75rem 0.25rem 0.75rem;
+    margin-left: 1.5rem;
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    box-shadow: 2px 3px 2px 0 #777;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    margin-top: -50%;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+
+webc-spinner{
+    background: rgba(64, 149, 131, 0.15);
+}
+
+webc-spinner[data-value]::after {
+    content: attr(data-value);
+    top: calc(50% + 30px);
+    padding: 15px 15px 15px 70px;
+    background: #008798;
+    color: white;
+    border-radius: 5px;
+    margin-left: -60px;
+}
+
+webc-spinner[data-value][completed]::after {
+    margin-left: -65px;
+    padding-left: 40px;
+}
+
+webc-spinner[data-value][completed] *{
+    visibility: hidden;
+}
+
+webc-spinner[data-value][completed]::before{
+    content: "\f058";
+    font-family: FontAwesome;
+    font-size:1.5em;
+    z-index: 100;
+    color: white;
+}

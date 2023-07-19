@@ -1,0 +1,143 @@
+.common-datatable .webc-datatable--container > * {
+    padding: 0.5rem;
+    border-bottom: 1px solid #CDCDCD;
+}
+
+.common-datatable .webc-datatable--container > .webc-datatable--header {
+    font-weight: bold;
+    border-color: #2F2F2F;
+    margin-bottom: 0.5rem;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 0.5rem;
+}
+
+.common-datatable .webc-datatable--container webc-spinner {
+    align-self: center;
+}
+
+.common-datatable .controls {
+    display: flex;
+    justify-content: center;
+}
+
+.common-datatable .controls > button {
+    margin: 1rem 0.5rem 0 0;
+    border: 1px solid transparent;
+    transition: border-color 200ms ease-in-out;
+}
+
+.common-datatable webc-datatable div.cell {
+    background: #cfe8eb;
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+}
+
+.dt-2-col .webc-datatable--container,
+.dt-3-col .webc-datatable--container,
+.dt-4-col .webc-datatable--container,
+.dt-5-col .webc-datatable--container,
+.dt-6-col .webc-datatable--container,
+.dt-7-col .webc-datatable--container,
+.dt-8-col .webc-datatable--container,
+.dt-9-col .webc-datatable--container {
+    display: grid;
+    align-content: start;
+    min-height: 325px;
+}
+
+.dt-2-col .webc-datatable--container {
+    grid-template-columns: 1fr 1fr;
+}
+
+.dt-3-col .webc-datatable--container {
+    grid-template-columns: repeat(2, 1fr) 3fr;
+}
+
+.dt-4-col .webc-datatable--container {
+    grid-template-columns: repeat(3, 2fr) 3fr;
+}
+
+.dt-5-col .webc-datatable--container {
+    grid-template-columns: repeat(4, 1fr) 2fr;
+}
+
+.dt-6-col .webc-datatable--container {
+    grid-template-columns: repeat(5, 1fr) 2fr;
+}
+
+.dt-7-col .webc-datatable--container {
+    grid-template-columns: repeat(6, 1fr) 2fr;
+}
+
+.dt-8-col .webc-datatable--container {
+    grid-template-columns: repeat(7, 1fr) 2fr;
+}
+
+.dt-9-col .webc-datatable--container {
+    grid-template-columns: repeat(8, 1fr) 2fr;
+}
+
+.trial-list-table .webc-datatable--container {
+    grid-template-columns: 2fr repeat(4, 1fr) 2fr;
+}
+
+.dt-2-col webc-datatable div.cell:nth-child(4n+1),
+.dt-2-col webc-datatable div.cell:nth-child(4n+2),
+
+.dt-3-col webc-datatable div.cell:nth-child(6n+1),
+.dt-3-col webc-datatable div.cell:nth-child(6n+2),
+.dt-3-col webc-datatable div.cell:nth-child(6n+3),
+
+.dt-4-col webc-datatable div.cell:nth-child(8n+1),
+.dt-4-col webc-datatable div.cell:nth-child(8n+2),
+.dt-4-col webc-datatable div.cell:nth-child(8n+3),
+.dt-4-col webc-datatable div.cell:nth-child(8n+4),
+
+.dt-5-col webc-datatable div.cell:nth-child(10n+1),
+.dt-5-col webc-datatable div.cell:nth-child(10n+2),
+.dt-5-col webc-datatable div.cell:nth-child(10n+3),
+.dt-5-col webc-datatable div.cell:nth-child(10n+4),
+.dt-5-col webc-datatable div.cell:nth-child(10n+5),
+
+.dt-6-col webc-datatable div.cell:nth-child(12n+1),
+.dt-6-col webc-datatable div.cell:nth-child(12n+2),
+.dt-6-col webc-datatable div.cell:nth-child(12n+3),
+.dt-6-col webc-datatable div.cell:nth-child(12n+4),
+.dt-6-col webc-datatable div.cell:nth-child(12n+5),
+.dt-6-col webc-datatable div.cell:nth-child(12n+6),
+
+.dt-7-col webc-datatable div.cell:nth-child(14n+1),
+.dt-7-col webc-datatable div.cell:nth-child(14n+2),
+.dt-7-col webc-datatable div.cell:nth-child(14n+3),
+.dt-7-col webc-datatable div.cell:nth-child(14n+4),
+.dt-7-col webc-datatable div.cell:nth-child(14n+5),
+.dt-7-col webc-datatable div.cell:nth-child(14n+6),
+.dt-7-col webc-datatable div.cell:nth-child(14n+7),
+
+.dt-8-col webc-datatable div.cell:nth-child(16n+1),
+.dt-8-col webc-datatable div.cell:nth-child(16n+2),
+.dt-8-col webc-datatable div.cell:nth-child(16n+3),
+.dt-8-col webc-datatable div.cell:nth-child(16n+4),
+.dt-8-col webc-datatable div.cell:nth-child(16n+5),
+.dt-8-col webc-datatable div.cell:nth-child(16n+6),
+.dt-8-col webc-datatable div.cell:nth-child(16n+7),
+.dt-8-col webc-datatable div.cell:nth-child(16n+8),
+
+.dt-9-col webc-datatable div.cell:nth-child(18n+1),
+.dt-9-col webc-datatable div.cell:nth-child(18n+2),
+.dt-9-col webc-datatable div.cell:nth-child(18n+3),
+.dt-9-col webc-datatable div.cell:nth-child(18n+4),
+.dt-9-col webc-datatable div.cell:nth-child(18n+5),
+.dt-9-col webc-datatable div.cell:nth-child(18n+6),
+.dt-9-col webc-datatable div.cell:nth-child(18n+7),
+.dt-9-col webc-datatable div.cell:nth-child(18n+8),
+.dt-9-col webc-datatable div.cell:nth-child(18n+9) {
+    background: #c2ced8;
+    margin: 0.25rem 0;
+}
+
+.webc-datatable--container label[data-tag] {
+    padding: 0.125rem 0.75rem;
+}

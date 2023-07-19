@@ -1,0 +1,66 @@
+.completed-studies-container {
+    display:flex;
+    flex-direction: column;
+}
+
+.study-container {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    height: 50px;
+}
+
+button.link.option {
+    padding: 0.125rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    color: var(--primary);
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.badge-complete {
+    color: #fff;
+    background-color: #008798;
+}
+
+.study-title {
+    font-size: 20px !important;
+}
+
+.study-subtitle {
+    font-size: 18px !important;
+}
+
+.study-description {
+    font-size: 16px !important;
+}
+
+.study-datatype, .study-status {
+    font-size: inherit;
+    margin-bottom: 2px;
+    font-weight: 400;
+}
+
+.btns-container {
+    border-top: 1px solid gray;
+}
+
+.btns-container-item {
+    margin-top: 0.75rem;
+}
+
+.shared-data-container, .title-container {
+    border-bottom: 1px solid gray;
+}
+
+.card-item {
+    margin-bottom: 0.75rem;
+}

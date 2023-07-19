@@ -1,0 +1,27 @@
+<link href="./assets/css/pages/visits.css" rel="stylesheet">
+<webc-container controller="econsent/ProceduresViewController">
+    <div class="container-child">
+        <div class="header-title">
+            <button class="navigate-back" data-tag="back">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <h3>Procedures Attendance</h3>
+        </div>
+            <ion-list data-for="@procedures">
+                <ion-item>
+                    <ion-avatar  slot="start" class="mr-2">
+                        <webc-switch condition="@status">
+                            <i class="fa fa-check-circle fa-2x text-success" slot="Completed">
+                            </i>
+                            <i class="fa fa-times-circle fa-2x text-danger" slot="Missed">
+                            </i>
+                        </webc-switch>
+                    </ion-avatar>
+                    <ion-label>
+                        <p>{{@name}}</p>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </div>
+    </div>
+</webc-container>

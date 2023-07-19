@@ -1,0 +1,81 @@
+<webc-container controller="iot/HealthStudiesController" class="landing-webc-container">
+    <div class="container-child">
+
+        <div class="header-title">
+            <button class="navigate-back" data-tag="navigation:go-back">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <h3>Health Studies</h3>
+        </div>
+
+        <div class="main-navigation">
+            <div class="health-studies-container">
+                <div data-if="@isLoading">
+                    <div slot="true"
+                         class="container d-flex flex-column align-items-center justify-content-center calendar-initializing">
+                        <div class="row">
+                            <div class="spinner-border text-info" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ion-list>
+                    <ion-item data-tag="participating-studies" class="mb-2 mt-2">
+                        <ion-avatar slot="start">
+                            <ion-icon name="cloud-download" color="green" size="large"></ion-icon>
+                        </ion-avatar>
+                        <ion-label>
+                            <h2>Participating studies</h2>
+                            <p>Existing participating studies</p>
+                        </ion-label>
+                        <ion-badge slot="end" color="green"> {{@numberOfParticipatingStudies}} </ion-badge>
+                    </ion-item>
+
+
+                    <ion-item data-tag="pending-invitations" class="mb-2 mt-2">
+                        <ion-avatar slot="start">
+                            <ion-icon name="cloud-upload" color="green" size="large"></ion-icon>
+                        </ion-avatar>
+                        <ion-label>
+                            <h2>Pending Invitations</h2>
+                            <p>Accept or reject participation to studies</p>
+                        </ion-label>
+                        <ion-badge slot="end" color="green" size="large">{{@numberOfPendingInvitations}}</ion-badge>
+                    </ion-item>
+
+                    <ion-item data-tag="completed-studies" class="mb-2 mt-2">
+                        <ion-avatar slot="start">
+                            <ion-icon name="cloud-done" color="green" size="large"></ion-icon>
+                        </ion-avatar>
+                        <ion-label>
+                            <h2>Completed Studies</h2>
+                            <p>Check the results and feedback</p>
+                        </ion-label>
+                        <ion-badge slot="end" color="green"> {{@numberOfCompletedStudies}} </ion-badge>
+                    </ion-item>
+
+
+                    <ion-item data-tag="permissions" class="mb-2 mt-2">
+                        <ion-avatar slot="start">
+                            <ion-icon name="cloud-offline" color="green" size="large"></ion-icon>
+                        </ion-avatar>
+                        <ion-label>
+                            <h2>Study Permissions</h2>
+                            <p>Active permissions and history</p>
+                        </ion-label>
+                        <ion-badge slot="end" color="green"> {{@numberOfStudyPermissions}} </ion-badge>
+                    </ion-item>
+
+
+                </ion-list>
+
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    </div>
+</webc-container>

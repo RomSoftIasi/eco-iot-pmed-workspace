@@ -1,0 +1,172 @@
+{
+    "translations":false,
+    "logLevel": "none",
+    "theme": "trial-participant-theme",
+    "pages": [{
+            "name": "Landing",
+            "path": "/",
+            "src": "./landing.html",
+            "tag": "home"
+        },
+        {
+            "name": "Task Calendar",
+            "path": "/task-calendar",
+            "src": "econsent/task-calendar.html",
+            "tag": "task-calendar"
+        },
+        {
+            "name": "tasks",
+            "path": "/tasks",
+            "src": "econsent/tasks.html",
+            "tag": "econsent-tasks"
+        },
+        {
+            "name": "Visit Details",
+            "path": "/visit-details",
+            "src": "econsent/visit-details.html",
+            "tag": "visit-details"
+        },
+        {
+            "name": "Trial",
+            "path": "/trial",
+            "src": "econsent/trial.html",
+            "tag": "trial"
+        },
+        {
+            "name": "Consent History",
+            "path": "/consent-history",
+            "src": "econsent/consent-history.html",
+            "tag": "consent-history"
+        },
+        {
+            "name": "Consent Preview",
+            "path": "/consent-preview",
+            "src": "econsent/consent-preview.html",
+            "tag": "consent-preview"
+        },
+        {
+            "name": "My Profile",
+            "path": "/my-profile",
+            "src": "general/my-profile.html",
+            "tag": "my-profile"
+        },
+        {
+            "name": "Edit Address",
+            "path": "/edit-address",
+            "src": "general/address.html",
+            "tag": "edit-address"
+        },
+        {
+            "name": "Notifications",
+            "path": "/notifications",
+            "src": "general/notifications.html",
+            "tag": "notifications"
+        },
+        {
+            "name": "Econsent",
+            "path": "/econsent",
+            "src": "econsent/econsent.html",
+            "tag": "econsent"
+        },
+        {
+            "name": "SignEconsent",
+            "path": "/sign-econsent",
+            "src": "econsent/sign-econsent.html",
+            "tag": "sign-econsent"
+        },
+        {
+            "name": "ProceduresView",
+            "path": "/procedures-view",
+            "src": "econsent/procedures-view.html",
+            "tag": "procedures-view"
+        },
+        {
+            "name": "Feedback",
+            "path": "/iot-feedback",
+            "src": "iot/feedback.html",
+            "tag": "iot-feedback"
+        },
+        {
+            "name": "View Feedback",
+            "path": "/iot-view-feedback",
+            "src": "iot/view-feedback.html",
+            "tag": "view-feedback"
+        },
+        {
+            "name": "IoT View Permission",
+            "path": "/iot-view-permission",
+            "src": "iot/view-permission.html",
+            "tag": "view-permission"
+        },
+        {
+            "name": "Completed Studies",
+            "path": "iot/completed-studies",
+            "src": "iot/completed-studies.html",
+            "tag": "completed-studies"
+        },
+        {
+            "name": "Results List",
+            "path": "/iot-results-list",
+            "src": "iot/results-list.html",
+            "tag": "results-list"
+        },
+        {
+            "name": "View Result",
+            "path": "/iot-view-result",
+            "src": "iot/view-result.html",
+            "tag": "view-result"
+        },
+        {
+            "name": "Health Studies",
+            "path": "/iot-health-studies",
+            "src": "iot/health-studies.html",
+            "tag": "iot-health-studies"
+        },
+        {
+            "name": "Patient Health Data Selection",
+            "path": "/iot-data-selection",
+            "src": "iot/iotData/selectHealthData.html",
+            "tag": "iot-data-selection"
+        },
+        {
+            "name": "Patient Health Data",
+            "path": "/helath-data",
+            "src": "iot/iotData/healthData.html",
+            "tag": "iot-helath-data"
+        },
+        {
+            "name": "Participating Studies",
+            "path": "/participating-studies",
+            "src": "iot/participating-studies.html",
+            "tag": "participating-studies"
+        },
+        {
+            "name": "Pending Invitations",
+            "path": "/pending-invitations",
+            "src": "iot/pending-invitations.html",
+            "tag": "pending-invitations"
+        },
+        {
+            "name": "View Study Details",
+            "path": "/view-study-details",
+            "src": "iot/view-study-details.html",
+            "tag": "view-study-details"
+        },
+        {
+            "name": "sharing-permissions",
+            "path": "/sharing-permissions",
+            "src": "iot/sharing-permissions.html",
+            "tag": "sharing-permissions"
+        },
+        {
+            "name": "eDiary",
+            "path": "/iot-ediary",
+            "src": "iot/ediary/ediary.html",
+            "tag": "ediary"
+        }
+    ],
+    "pagesFallback": {
+        "name": "404",
+        "src": "./landing.html"
+    }
+}

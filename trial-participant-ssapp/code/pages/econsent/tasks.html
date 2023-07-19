@@ -1,0 +1,91 @@
+<link href="./assets/css/pages/tasks.css" rel="stylesheet">
+<webc-container controller="econsent/TasksController">
+    <div class="container-child">
+        <header>
+            <div class="header-title">
+
+                <button class="navigate-back" data-tag="navigation:go-back">
+                    <i class="fa fa-angle-left"></i>
+                    <a href="task-calendar.html"></a>
+                </button>
+
+                <h3>Pending Tasks</h3>
+            </div>
+            <div class="text-center logo-container">
+                <img alt="Responsive image" class="img-fluid" src="./assets/images/pharma_logo.png">
+            </div>
+        </header>
+
+        <br>
+
+        <div class="date">
+            <h3 class="m-3">{{@month}} {{@day}}</h3>
+        </div>
+
+        <br>
+
+        <div data-if="@today">
+            <div slot="false">
+                <div class="alert alert-warning" role="alert">
+                    View mode. You can only complete today's tasks.
+                </div>
+            </div>
+        </div>
+
+        <div data-if="@tasksLoaded">
+            <webc-spinner slot="loading"></webc-spinner>
+
+            <div data-for="@tasks" slot="true">
+                <div data-if="@showTask" class="visits-cards-container">
+                    <ion-card>
+                        <ion-card-content class="d-flex justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <h2>Visit {{@details.name}}</h2>
+                            </div>
+                            <button class="prom-prem-button" data-tag="@tag" type="button">
+                                <i class="fa fa-2x fa-angle-right"></i>
+                            </button>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+                <div slot="no-data">
+                    <p>
+                        No tasks or appointments for today.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div data-if="@showProms" slot="true">
+            <ion-card class="questionnaire-card">
+                <ion-card-content class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <h2>Health Questionnaire</h2>
+                    </div>
+                    <button class="prom-prem-button" data-tag="navigate:ediary-prom" type="button"
+                            disabled="@promdisable">
+                        <i class="fa fa-2x fa-angle-right"></i>
+                    </button>
+                </ion-card-content>
+            </ion-card>
+            <br>
+        </div>
+
+        <div data-if="@showPrems" slot="true">
+            <ion-card class="questionnaire-card">
+                <ion-card-content class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <h2>Rate your experience</h2>
+                    </div>
+                    <button class="prom-prem-button" data-tag="navigate:ediary-prem" type="button"
+                            disabled="@premdisable">
+                        <i class="fa fa-2x fa-angle-right"></i>
+                    </button>
+                </ion-card-content>
+            </ion-card>
+        </div>
+
+    </div>
+
+
+</webc-container>

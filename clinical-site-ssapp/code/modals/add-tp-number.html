@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="./assets/css/pages/general_modal.css">
+
+    <h2 slot="header" class="alert-title">Set TS Number</h2>
+
+<div class="maxw">
+    <div class="top">
+        <div class="line">
+            <label>{{@number.label}}</label>
+
+
+            <div class="d-flex column-gap-0 no-gutters" >
+                <div class="form-group col-3 d-flex flex-row align-items-center p-0" >
+                    <input type="text" class="form-control" readonly value="@trialId">
+                    <span class="p-1">-</span>
+                </div>
+                <div class="form-group col-3 d-flex flex-row align-items-center p-0">
+                    <input type="text" class="form-control"  readonly value="@siteId">
+                    <span class="p-1">-</span>
+                </div>
+                <div class="form-group col-6 d-flex flex-row align-items-center p-0">
+                    <input type="text" class="form-control" data-view-model="@number" />
+                </div>
+            </div>
+
+            <div data-if="@tsNumberExists">
+                <p class="small alert-warning p-2"><i class="fa fa-exclamation-circle mr-1"></i>This <b>Trial Subject Number</b> is already assigned to another patient.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <button class="tp-button wide-button inverted-colors" disabled="@isAddTSNumberDisabled" slot="footer" data-tag="tp:submit">Done</button>
+        <button class="tp-button wide-button inverted-colors" slot="footer" data-close>Cancel</button>
+    </div>
+</div>

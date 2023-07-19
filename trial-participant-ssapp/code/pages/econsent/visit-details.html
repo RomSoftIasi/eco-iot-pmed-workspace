@@ -1,0 +1,95 @@
+<link href="./assets/css/pages/visits.css" rel="stylesheet">
+<webc-container controller="econsent/VisitDetailsController">
+    <div class="container-child">
+        <div class="header-title">
+            <button class="navigate-back" data-tag="back">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <h3>Visit Details</h3>
+        </div>
+
+
+        <ion-card class="current-visit">
+            <ion-card-header>
+                <ion-card-subtitle>
+                    <h2 class="w-100 text-center pl-3 pr-3">Visit {{@details.name}}</h2>
+                </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <div class="calendar-icon-container">
+                            <i class="fa fa-calendar"></i> <span class="visit-date">{{@toShowDate}}</span>
+                        </div>
+
+                        <div class="invitation-details">
+                            <div>
+                                <span class="badge badge-success">Accepted</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-group-wrapper">
+                        <button class="general-button w-50 reschedule-btn" data-tag="reschedule-visit" disabled="@isRescheduleDisabled">
+                            <i class="fa fa-calendar-check-o"></i>
+                            Reschedule
+                        </button>
+                        <button class="general-button w-50" data-tag="navigate:procedures">
+                            <i class="fa fa-list"></i>
+                            Procedures
+                        </button>
+                    </div>
+                </div>
+
+            </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-card-header>
+                <ion-card-subtitle>
+                    <h2 class=" w-100 text-center pl-3 pr-3">Other Visits Scheduled</h2>
+                </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+
+                <div data-if="@hasOtherVisitsScheduled">
+                    <div slot="true" data-for="@visits">
+                    <div class="other-visits-container">
+
+                        <div class="invitation-details">
+
+                            <h5>Visit {{@name}}</h5>
+
+                            <div class="d-flex justify-content-between">
+
+                                <div class="calendar-icon-container">
+                                    <i class="fa fa-calendar"></i> <span class="visit-date">{{@visitDate}}</span>
+                                </div>
+                                <div class="invitation-details">
+                                    <webc-switch condition="@status">
+                                        <span slot="accepted" class="badge badge-success">Accepted</span>
+                                        <span slot="rescheduled" class="badge badge-warning">Rescheduled</span>
+                                        <span slot="pending" class="badge badge-dark">Pending</span>
+                                    </webc-switch>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                    <div slot="false">
+                        <div class="alert alert-warning" role="alert">
+                            There are no other scheduled visits.
+                        </div>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+
+
+    </div>
+    </div>
+</webc-container>

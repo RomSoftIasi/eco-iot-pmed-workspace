@@ -1,0 +1,23 @@
+<div class="question-number">Question {{@questionNumber}}</div>
+
+<div class="progress mt-3 mb-2" id="questionnaire_progress">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">{{@progress}}</div>
+</div>
+
+<div data-for="@questions" class="questions">
+    <div data-if="@visible">
+       <webc-template slot="true" template="@template" data-view-model="@"></webc-template>
+    </div>
+</div>
+<div class="button-group-wrapper" role="group">
+    <div data-if="@buttonsState.showLeft">
+        <button type="button" class="general-button" data-tag="prev">Back</button>
+    </div>
+    <div data-if="@buttonsState.showRight">
+        <button type="button" data-tag="next" class="general-button">Next</button>
+    </div>
+
+    <div data-if="@buttonsState.showFeedback">
+        <button type="button" class="general-button" data-tag="send-feedback">Send Feedback</button>
+    </div>
+</div>

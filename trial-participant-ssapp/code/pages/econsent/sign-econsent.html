@@ -1,0 +1,50 @@
+<link href="./assets/css/pages/consent.css" rel="stylesheet">
+<webc-container controller="econsent/ReadEconsentController">
+    <div class="container-child">
+
+        <div class="header-title">
+            <button class="navigate-back" data-tag="back">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <h3>Sign Econsent</h3>
+        </div>
+
+        <main id="pdf-wrapper">
+            <div id="canvas-wrapper">
+                <div id="canvas-parent">
+                </div>
+            </div>
+        </main>
+
+        <div class="econsent-actions">
+            <div data-if="@showControls">
+
+                    <div data-if="@required">
+                        <div>
+                            <button class="long-button"
+                                    data-tag="econsent:sign">Sign Electronically
+                            </button>
+                        </div>
+                        <button class="long-button"
+                                data-tag="econsent:decline">Decline
+                        </button>
+
+                    </div>
+
+                    <div data-if="@signed">
+                            <button class="long-button" data-tag="econsent:withdraw" disabled="@isWithdrawDisabled"
+                                    style="background-color: red">Withdraw
+                            </button>
+                    </div>
+
+                    <div data-if="@withdraw">
+                            <button class="long-button"
+                                    data-tag="econsent:sign">Re-Sign
+                            </button>
+                    </div>
+
+            </div>
+        </div>
+
+    </div>
+</webc-container>

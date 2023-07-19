@@ -1,0 +1,276 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-size: 1rem;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html,
+body,
+.container,
+.main-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+webc-app-container {
+    --gap: 0 !important;
+    background: #00345B;
+    padding: 1.5rem;
+}
+
+webc-app-container .container {
+    width: 100%;
+}
+
+.wallet-initializing-info{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: black;
+    z-index: 100;
+}
+
+.wallet-initializing-info .spinner-border{
+    margin-bottom: 2rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.container.app-container,
+.container.before {
+    background: #FFFFFF;
+    padding: 0.5rem;
+}
+
+.container.app-container {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    -moz-border-radius-bottomright: 1rem;
+    -moz-border-radius-bottomleft: 1rem;
+    position: relative;
+}
+
+.container.before {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    -moz-border-radius-topright: 1rem;
+    -moz-border-radius-topleft: 1rem;
+}
+
+.container.before > div {
+    -webkit-column-gap: 1rem;
+    -moz-column-gap: 1rem;
+    column-gap: 1rem;
+    padding-right: 2rem;
+}
+
+.container.after {
+    padding: 2rem 0;
+}
+
+.container.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem 0;
+}
+
+.container.main-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 0 5%;
+}
+
+.container.main-container,
+.container.main-container .container {
+    margin-left: auto;
+    margin-right: auto;
+    row-gap: 1rem;
+}
+
+.container.main-container > .container {
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .container.main-container > .container {
+        scroll-behavior: auto;
+    }
+}
+
+.container.main-container > .container::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.container.main-container > .container::-webkit-scrollbar-track {
+    background-color: rgba(0, 135, 152, 0.25);
+}
+
+.container.main-container > .container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 135, 152, 1);
+    border-radius: 0.5rem;
+}
+
+.container.main-container main {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container.main-container main.items-container {
+    justify-content: normal;
+}
+
+.container.main-container header {
+    background: #FFFFFF;
+    position: sticky;
+    top: 0;
+}
+
+.container.main-container footer {
+    display: flex;
+    padding: 1rem 0;
+    row-gap: 0.5rem;
+}
+
+.small-container {
+    padding: 0 15%;
+}
+
+.form-container {
+    display: grid;
+    width: 100%;
+    row-gap: 1rem;
+    margin: 0;
+    padding: 2% 10%;
+    height: 100%;
+    grid-auto-rows: min-content;
+}
+/* TO be unified around entire ssapp*/
+main .form-container{
+    height: auto;
+}
+
+.form-row {
+    display: flex;
+    height: auto;
+    width: 100%;
+    column-gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.notification-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    padding: 3rem 4rem;
+}
+
+.notification-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1199px) {
+    .small-container {
+        padding: 0 10%;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .small-container {
+        padding: 0 0.75rem;
+    }
+
+    .form-container {
+        padding: 2%;
+    }
+
+    .form-container .form-row {
+        flex-direction: column;
+    }
+
+    .notification-container {
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem 3rem;
+    }
+}
+
+@media screen and (max-width: 759px) {
+    .notification-container {
+        grid-template-columns: 1fr;
+        padding: 1rem 2rem;
+    }
+}
+
+.action-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 10%;
+    -webkit-column-gap: 1.5rem;
+    -moz-column-gap: 1.5rem;
+    column-gap: 1.5rem;
+}
+
+.grid-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.grid-four-columns {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 15px;
+}
+
+.view-graphics-btn {
+    background: var(--secondary);
+    border-radius: 0.35rem;
+    color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    text-decoration: none;
+    min-height: 4rem;
+    width: 10rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: none;
+}
+
+.graph-container {
+    height: 400px;
+    width: 400px;
+}
+.parent-graphs-container {
+    display:flex;
+    justify-content: space-around;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary);
+}
