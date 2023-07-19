@@ -53,14 +53,8 @@
         },
         {
             "name": "common-services",
-            "src": "https://github.com/PharmaLedger-IMI/eco-iot-services.git",
+            "src": "",
             "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "652c5ddb1ccdbcfe6a8dd8d95fac8e05955a172c"
-                },
                 {
                     "type": "copy",
                     "src": "./patch/common-services",
@@ -177,14 +171,8 @@
         },
         {
             "name": "sponsor-ssapp",
-            "src": "https://github.com/PharmaLedger-IMI/eco-sponsor-ssapp.git",
+            "src": "",
             "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "a53b6ae62001805119717b96e2f5a1ff60da0240"
-                },
                 {
                     "type": "copy",
                     "src": "./patch/sponsor-ssapp",
@@ -201,14 +189,8 @@
         },
         {
             "name": "clinical-site-ssapp",
-            "src": "https://github.com/PharmaLedger-IMI/clinical-site-ssapp.git",
+            "src": "",
             "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "3634aa900155932be30ea14bbdd3ab8c4336395e"
-                },
                 {
                     "type": "copy",
                     "src": "./patch/clinical-site-ssapp",
@@ -225,14 +207,8 @@
         },
         {
             "name": "trial-participant-ssapp",
-            "src": "https://github.com/PharmaLedger-IMI/trial-participant-ssapp.git",
+            "src": "",
             "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "93b3c0e4486232d1b92f93044cc14ff1b9249d38"
-                },
                 {
                     "type": "copy",
                     "src": "./patch/trial-participant-ssapp",
@@ -249,14 +225,8 @@
         },
         {
             "name": "themes/sponsor-theme",
-            "src": "https://github.com/PharmaLedger-IMI/eco-sponsor-theme.git",
+            "src": "",
             "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "f002e931c3dcf29cbe4302f28ac74dbc4a1684b4"
-                },
                 {
                     "type": "copy",
                     "src": "./patch/themes/sponsor-theme",
@@ -273,14 +243,8 @@
         },
         {
             "name": "themes/clinical-site-theme",
-            "src": "https://github.com/PharmaLedger-IMI/clinical-site-theme.git",
+            "src": "",
             "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "5c81b029269abac10f035aba8a4c764f9de33e44"
-                },
                 {
                     "type": "copy",
                     "src": "./patch/themes/clinical-site-theme",
@@ -297,14 +261,8 @@
         },
         {
             "name": "themes/trial-participant-theme",
-            "src": "https://github.com/PharmaLedger-IMI/trial-participant-theme.git",
+            "src": "",
             "actions": [
-                {
-                    "type": "smartClone",
-                    "target": ".",
-                    "collectLog": false,
-                    "commit": "b4de023ab3942804e64fec499fecac742c32f934"
-                },
                 {
                     "type": "copy",
                     "src": "./patch/themes/trial-participant-theme",
